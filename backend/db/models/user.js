@@ -42,12 +42,13 @@ module.exports = (sequelize, DataTypes) => {
     scopes: {
       currentUser: {
         attributes: { exclude: ['hashedPassword']},
+      },
         loginUser: {
           attributes: {}
         },
       },
     }
-  });
+  );
   
   
   User.associate = function(models) {
