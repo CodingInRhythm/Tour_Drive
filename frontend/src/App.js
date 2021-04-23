@@ -15,9 +15,10 @@ const [isLoaded, setIsLoaded] = useState(false)
   }, [dispatch])
   
   
-  return isLoaded && (
+  return (
     <>
     <Navigation isLoaded={isLoaded}></Navigation>
+    {isLoaded && (
     <Switch>
       <Route path="/login">
         <LoginFormPage />
@@ -26,6 +27,7 @@ const [isLoaded, setIsLoaded] = useState(false)
         <SignupFormPage />
       </Route>
     </Switch>
+    )}
     </>
   );
 }
