@@ -32,7 +32,7 @@ const LoginFormPage = () => {
           ))}
         </ul>
         <label>
-          Username
+          Username CHANGE
           <input
             onChange={(e) => setCredential(e.target.value)}
             name="credential"
