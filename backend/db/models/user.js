@@ -32,6 +32,9 @@ module.exports = (sequelize, DataTypes) => {
         len: [60, 60]
       },
     },
+    imageUrl: {
+      type: DataTypes.STRING,
+    }
   }, 
   {
     defaultScope: {
@@ -84,12 +87,13 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
 
-  User.signup = async function ({ username, email, password }) {
+  User.signup = async function ({ username, email, password, imageUrl }) {
     const hashedPassword = bcrypt.hashSync(password);
     const user = await User.create({
       username,
       email,
       hashedPassword,
+      imageUrl
     });
     return await User.scope("currentUser").findByPk(user.id);
   };

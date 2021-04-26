@@ -10,11 +10,17 @@ export async function csrfFetch(url, options = {}) {
   // "application/json", and set the "XSRF-TOKEN" header to the value of the
   // "XSRF-TOKEN" cookie
   if (options.method.toUpperCase() !== "GET") {
-    options.headers["Content-Type"] =
-      options.headers["Content-Type"] || "application/json";
+    console.log('Here?', options)
+    if (options.headers["Content-Type"] === "multipart/form-data") {
+      delete options.headers["Content-Type"];
+    } else {
+      options.headers["Content-Type"] =
+        options.headers["Content-Type"] || "application/json";
+    }
     options.headers["XSRF-Token"] = Cookies.get("XSRF-TOKEN");
   }
   // call the default window's fetch with the url and the options passed in
+  console.log(url)
   const res = await window.fetch(url, options);
 
   // if the response status code is 400 or above, then throw an error with the

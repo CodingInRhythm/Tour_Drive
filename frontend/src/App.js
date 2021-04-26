@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux'
 import * as sessionActions from "./store/session";
 import SignupFormPage from './components/SignupFormPage';
 import Navigation from './components/Navigation'
+import MusicPlayer from './components/MusicPlayer';
 
 function App() {
 const dispatch = useDispatch()
@@ -18,6 +19,7 @@ const [isLoaded, setIsLoaded] = useState(false)
   return (
     <>
     <Navigation isLoaded={isLoaded}></Navigation>
+    <MusicPlayer></MusicPlayer>
     {isLoaded && (
     <Switch>
       <Route path="/login">
