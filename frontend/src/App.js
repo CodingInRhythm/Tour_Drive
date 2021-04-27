@@ -6,6 +6,7 @@ import * as sessionActions from "./store/session";
 import SignupFormPage from './components/SignupFormPage';
 import Navigation from './components/Navigation'
 import MusicPlayer from './components/MusicPlayer';
+import AlbumPage from './components/AlbumPage';
 
 function App() {
 const dispatch = useDispatch()
@@ -27,6 +28,9 @@ const [isLoaded, setIsLoaded] = useState(false)
       </Route>
       <Route path="/signup">
         <SignupFormPage />
+      </Route>
+      <Route path="/albums/:id">
+        <AlbumPage />
       </Route>
     </Switch>
     )}
