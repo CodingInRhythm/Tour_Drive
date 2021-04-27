@@ -6,7 +6,9 @@ const router = express.Router()
 router.get("/:id", async(req, res) => {
     const id = req.params.id
     console.log('in here?')
-    const album = await db.Album.findByPk(id)
+    const album = await db.Album.findByPk(id, {
+        include: [db.Song]
+    })
 
     return res.json(
         album
