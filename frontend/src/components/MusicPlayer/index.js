@@ -18,7 +18,7 @@ const MusicPlayer = ({tracks}) => {
     const startTimer = () => {
 	  // Clear any timers already running
 	  clearInterval(intervalRef.current);
-    }
+    
 
 	  intervalRef.current = setInterval(() => {
 	    if (audioRef.current.ended) {
@@ -27,9 +27,12 @@ const MusicPlayer = ({tracks}) => {
 	      setTrackProgress(audioRef.current.currentTime);
 	    }
 	  }, [1000]);
+  }
 
 
-    //useEffects
+    /////////           useEffects
+
+
     useEffect(() => {
       console.log('here???useEffect')
       if (isPlaying) {
@@ -69,8 +72,8 @@ const MusicPlayer = ({tracks}) => {
       <>
         {tracks.map((song, idx) => (
           <div>
-            <h2 className="name">{name}</h2>
-            <AudioControls idx={idx} setTrackIndex={setTrackIndex} onPlayPauseClick={setIsPlaying} isPlaying={isPlaying}/>
+            <h2 className="name">{song.name}</h2>
+            <AudioControls idx={idx} TrackIndex={trackIndex} setTrackIndex={setTrackIndex} onPlayPauseClick={setIsPlaying} isPlaying={isPlaying}/>
           </div>
         ))}
         {/* <audio controls>

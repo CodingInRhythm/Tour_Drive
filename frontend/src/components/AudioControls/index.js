@@ -1,4 +1,4 @@
-const AudioControls = ({idx, setTrackIndex, onPlayPauseClick, isPlaying}) => {
+const AudioControls = ({idx, setTrackIndex, TrackIndex, onPlayPauseClick, isPlaying}) => {
    const handlePlayClick = () => {
        console.log('inside??')
        onPlayPauseClick(true)
@@ -7,22 +7,22 @@ const AudioControls = ({idx, setTrackIndex, onPlayPauseClick, isPlaying}) => {
 
     return (
         <div className="audio-controls"> 
-        {isPlaying ? (
+        {isPlaying && idx === TrackIndex? (
             <button
             type="button"
             className="pause"
             onClick={() => onPlayPauseClick(false)}
             aria-label="Pause"
-        > PLAY
+        > STOP
                 </button>
     ) : (
         <button
         type="button"
         className="play"
-        onClick={() => handlePlayClick}
+        onClick={() => handlePlayClick()}
         aria-label="Play"
          >
-        STOP
+        play
          </button>
     )}
       </div>
