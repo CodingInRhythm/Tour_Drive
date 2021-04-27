@@ -15,10 +15,16 @@ module.exports = {
          name: "Swirl",
          songLink:
            "https://codinginrhythmbucket.s3.amazonaws.com/near_far_beyond/01+-+Swirl+1.mp3",
-          artistId: 1,
-          albumId: 1
-          },
-
+         artistId: 1,
+         albumId: 1,
+       },
+       {
+         name: "Shore Road",
+         songLink:
+           "https://codinginrhythmbucket.s3.amazonaws.com/near_far_beyond/02+-+Shore+Road+1.mp3",
+         artistId: 1,
+         albumId: 1,
+       },
      ],
      {}
    );

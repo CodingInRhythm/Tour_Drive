@@ -9,7 +9,7 @@ const { User } = require('../../db/models')
 const router = express.Router();
 
 
-console.log('HERE??? INSIDE ROUTE')
+
 const validateSignup = [
   check("email")
     .exists({ checkFalsy: true })
@@ -44,7 +44,7 @@ router.post(
   singleMulterUpload("image"),
   validateSignup,
   asyncHandler(async (req, res) => {
-    console.log("!!!!!!!!!!!!!!!!")
+  
     const { email, password, username } = req.body;
     // const profileImageUrl = await singlePublicFileUpload(req.file);
     const user = await User.signup({

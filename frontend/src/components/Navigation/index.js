@@ -4,7 +4,7 @@ import ProfileButton from './ProfileButton'
 
 const Navigation = ({isLoaded}) => {
     const sessionUser = useSelector(state => state.session.user)
-    console.log(isLoaded)
+    
 
     let sessionLinks;
     if(sessionUser) {

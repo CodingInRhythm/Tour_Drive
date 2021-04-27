@@ -20,7 +20,6 @@ const [isLoaded, setIsLoaded] = useState(false)
   return (
     <>
     <Navigation isLoaded={isLoaded}></Navigation>
-    <MusicPlayer></MusicPlayer>
     {isLoaded && (
     <Switch>
       <Route path="/login">

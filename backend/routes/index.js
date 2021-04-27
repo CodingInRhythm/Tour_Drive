@@ -4,7 +4,7 @@ const apiRouter = require('./api');
 
 
 
-console.log('HERE')
+
 router.use('/api', apiRouter)
 
 if (process.env.NODE_ENV === "production") {

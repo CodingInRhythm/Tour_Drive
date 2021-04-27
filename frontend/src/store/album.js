@@ -8,9 +8,12 @@ export const setAlbum = album => ({
 //need to make api for getting song
 
 
-// const getAlbum = (id) => async(dispatch) => {
-//     const res = await fetch('/api/')
-// }
+export const getAlbum = (id) => async(dispatch) => {
+    const res = await fetch(`/api/albums/${id}`)
+    const data = await res.json()
+    dispatch(setAlbum(data))
+    return data
+}
 
 const initialstate = {
     album: null

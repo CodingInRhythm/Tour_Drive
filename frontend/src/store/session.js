@@ -25,7 +25,7 @@ export const login = (user) => async (dispatch) => {
 export const restoreUser = () => async (dispatch) => {
     const res = await csrfFetch('/api/session')
     const data = await res.json()
-    console.log(data)
+    
     dispatch(setUser(data.user))
     return res
 }
@@ -33,12 +33,12 @@ export const restoreUser = () => async (dispatch) => {
 export const signup = (userObj) => async (dispatch) => {
     const { email, password, username, image } = userObj
     const formData = new FormData();
-    console.log(email, password)
+
     formData.append("username", username);
     formData.append("email", email);
     formData.append("password", password);
     if (image) formData.append("image", image);
-    console.log(formData)
+    
     const res = await csrfFetch("/api/users", {
       method: "POST",
       headers: {
