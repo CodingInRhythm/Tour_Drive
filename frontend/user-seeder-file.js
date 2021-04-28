@@ -48,3 +48,20 @@ module.exports = {
     );
   },
 };
+
+
+{
+  "Id": "Policy1619546470019",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1619546460458",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::codinginrhythmbucket/*",
+      "Principal": "*"
+    }
+  ]
+}

@@ -7,7 +7,7 @@ router.get("/:id", async(req, res) => {
     const id = req.params.id
     
     const album = await db.Album.findByPk(id, {
-        include: [db.Song]
+        include: [db.Song, db.Artist]
     })
 
     return res.json(

@@ -1,0 +1,18 @@
+.album-page {
+    display: grid;
+    background-color: lightblue;
+    grid-template-areas: 
+    'left left middle middle right';
+}
+
+.music-player {
+    grid-area: left;
+}
+
+.album-art {
+    grid-area: middle;
+}
+
+.album-name {
+    grid-area: left;
+}

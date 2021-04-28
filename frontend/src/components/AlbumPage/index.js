@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import * as albumActions from '../../store/album'
 import { useEffect } from 'react'
+import './AlbumPage.css'
 
 //Right now I am rendering this page on a page load.  Maybe if I rendered it from a parent component thi would solve my bug?
 
@@ -17,13 +18,23 @@ const AlbumPage = () => {
     }, [dispatch, id])
     
    const album = useSelector((state) => state.album.album)
-   
-   console.log(album)
+  
+  
     return (
-      <>
-        
-        {album && <MusicPlayer tracks={album.Songs} />}
-      </>
+      <div className="album-page">   
+        {album && 
+        <>
+        <div>
+          <img src={album.Artist.avatarUrl}/>
+        </div>
+        <p className="album-name">{album.name} by {album.Artist.name}</p>
+        <div className="music-player"><MusicPlayer tracks={album.Songs} /></div>
+        <div className="album-art">
+          <img src={album.albumArt} />
+        </div>
+        </>
+      }
+      </div>
     );
 }
 

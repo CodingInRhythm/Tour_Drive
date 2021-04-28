@@ -39,7 +39,7 @@ module.exports = {
         userObj.imageUrl = user.picture.thumbnail
         users.push(userObj)
       })
-
+////                                           [{name:'1234, DOB: }]
    return  queryInterface.bulkInsert('Users', users, {});
   },
 
