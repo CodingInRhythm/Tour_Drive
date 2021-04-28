@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     // associations can be defined here
     Album.belongsTo(models.Artist, { foreignKey: 'artistId'})
     Album.hasMany(models.Song, { foreignKey: 'albumId'})
-    Album.belongsToMany(models.User, { through: 'User_Collection', foreignKey: 'albumId'})
+    Album.belongsToMany(models.User, { through: 'User_Collections', foreignKey: 'albumId'})
   };
   return Album;
 };

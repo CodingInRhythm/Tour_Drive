@@ -6,6 +6,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   User_Collection.associate = function(models) {
     // associations can be defined here
+    // User_Collection.belongsTo(models.User, {foreignKey: 'userId'})
+    // User_Collection.belongsTo(models.Albums, {foreignKey: 'albumId'})
   
   };
   return User_Collection;

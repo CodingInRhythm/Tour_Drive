@@ -45,22 +45,32 @@ module.exports = (sequelize, DataTypes) => {
     scopes: {
       currentUser: {
         attributes: { exclude: ['hashedPassword'],
-        include: [{model: User_Collection}, {model: User_Follow}]}
+        // include: [{model: User_Collection}, {model: User_Follow}]
+      }
       },
         loginUser: {
           attributes: {}
         },
       },
-    }
-  );
+    });
   
   
   User.associate = function(models) {
     // associations can be defined here
     User.belongsToMany(models.Album, {
-      through: 'User_Collection',
+      through: 'User_Collections',
       foreignKey: 'userId'
     })
+
+    User.belongsToMany(models.Artist, {
+      through: 'User_Follow',
+      foreignKey: 'userId',
+      otherKey: 'artistId'
+    })
+    // User.hasMany(models.User_Collection, {
+    //   foreignKey: 'userId'
+    // })
+    // User.hasMany(models.User_Follow, { foreignKey: 'userId'})
   };
 
   User.prototype.toSafeObject = function () {
