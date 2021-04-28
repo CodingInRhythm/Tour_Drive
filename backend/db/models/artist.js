@@ -9,11 +9,11 @@ module.exports = (sequelize, DataTypes) => {
   Artist.associate = function(models) {
     // associations can be defined here
     Artist.hasMany(models.Album, { foreignKey: 'artistId'})
-    Artist.belongsToMany(models.User, {
-      through: 'User_Follow',
-      foreignKey: 'artistId',
-      otherKey: 'userId'
-    })
+    // Artist.belongsToMany(models.User, {
+    //   through: 'User_Follow',
+    //   foreignKey: 'artistId',
+    //   otherKey: 'userId'
+    // })
   };
   return Artist;
 };

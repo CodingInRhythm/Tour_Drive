@@ -62,11 +62,11 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'userId'
     })
 
-    User.belongsToMany(models.Artist, {
-      through: 'User_Follow',
-      foreignKey: 'userId',
-      otherKey: 'artistId'
-    })
+    // User.belongsToMany(models.Artist, {
+    //   through: 'User_Follow',
+    //   foreignKey: 'userId',
+    //   otherKey: 'artistId'
+    // })
     // User.hasMany(models.User_Collection, {
     //   foreignKey: 'userId'
     // })

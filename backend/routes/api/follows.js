@@ -6,7 +6,7 @@ const router = express.Router();
 router.get('/:id', async(req, res) => {
     const id = req.params.id
     const follows = await db.User.findByPk(id, {
-        include: db.User_Follow
+        include: db.Artist
     })
     console.log(follows)
     return res.json({follows})
