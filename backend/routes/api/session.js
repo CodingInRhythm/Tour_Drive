@@ -18,7 +18,9 @@ const validateLogin = [
 ];
 
 router.get('/', restoreUser, (req, res) => {
+  console.log(req.user)
     const { user } = req;
+    console.log(user)
     if (user) {
         return res.json({
             user: user.toSafeObject()
