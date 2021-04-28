@@ -2,6 +2,7 @@ import { csrfFetch } from './csrf'
 
 const SET_USER = 'users/SET_USER'
 const REMOVE_USER = 'users/REMOVE_USER'
+const EDIT_USER = 'users/EDIT_USER'
 
 const setUser = user => ({
         type: SET_USER,
@@ -9,6 +10,11 @@ const setUser = user => ({
     })
 const removeUser = () => ({
     type: REMOVE_USER
+})
+
+const editUser = (user) => ({
+    type: EDIT_USER,
+
 })
 
 export const login = (user) => async (dispatch) => {
@@ -65,6 +71,14 @@ export const follow = (userId, artistId) => async (dispatch) => {
     const res = await csrfFetch('/api/follows', {
         method: 'POST',
         body: JSON.stringify({userId, artistId})
+    })
+}
+
+export const support = (userId, albumId) => async (dispatch) => {
+
+    const res = await csrfFetch('/api/collection', {
+        method: 'POST',
+        body: JSON.stringify({userId, albumId})
     })
 }
 

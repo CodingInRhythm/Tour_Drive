@@ -5,6 +5,7 @@ import * as albumActions from '../../store/album'
 import { useEffect } from 'react'
 import './AlbumPage.css'
 import Follow from '../Follow'
+import Support from '../SupportButton'
 
 //Right now I am rendering this page on a page load.  Maybe if I rendered it from a parent component thi would solve my bug?
 
@@ -34,6 +35,7 @@ const AlbumPage = () => {
           <img src={album.albumArt} />
         </div>
         <Follow />
+        <Support />
         </>
       }
       </div>
