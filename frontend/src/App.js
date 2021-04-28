@@ -7,6 +7,7 @@ import SignupFormPage from './components/SignupFormPage';
 import Navigation from './components/Navigation'
 import MusicPlayer from './components/MusicPlayer';
 import AlbumPage from './components/AlbumPage';
+import UserProfilePage from './components/UserProfilePage';
 
 function App() {
 const dispatch = useDispatch()
@@ -31,6 +32,10 @@ const [isLoaded, setIsLoaded] = useState(false)
       <Route path="/albums/:id">
         <AlbumPage />
       </Route>
+      <Route path="/user">
+        <UserProfilePage />
+      </Route>
+
     </Switch>
     )}
     </>

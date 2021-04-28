@@ -12,8 +12,9 @@ const removeUser = () => ({
     type: REMOVE_USER
 })
 
-const editUser = (user) => ({
+const editUser = (userData) => ({
     type: EDIT_USER,
+    payload: userData
 
 })
 
@@ -25,6 +26,7 @@ export const login = (user) => async (dispatch) => {
         body: JSON.stringify({credential, password}),
     });
     const data = await res.json()
+    console.log(data, res)
     dispatch(setUser(data.user))
     return res
 }
@@ -72,6 +74,10 @@ export const follow = (userId, artistId) => async (dispatch) => {
         method: 'POST',
         body: JSON.stringify({userId, artistId})
     })
+    const data = await res.json()
+    
+    dispatch(editUser(data))
+    return res
 }
 
 export const support = (userId, albumId) => async (dispatch) => {
@@ -96,6 +102,14 @@ const sessionReducer = (state = initialstate, action) => {
         case REMOVE_USER:
             newState = Object.assign({}, state);
             newState.user = null;
+            return newState
+        case EDIT_USER: 
+            newState = Object.assign({}, state);
+            console.log(action.payload)
+            if(newState.user.follows) {
+            newState.user.follows = [...newState.user.follows, action.payload]
+            }
+            else { newState.user.follows = [action.payload];}
             return newState
         default:
             return state
