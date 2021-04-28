@@ -60,6 +60,14 @@ export const logout = () => async (dispatch) => {
     return res
 }
 
+export const follow = (userId, artistId) => async (dispatch) => {
+    
+    const res = await csrfFetch('/api/follows', {
+        method: 'POST',
+        body: JSON.stringify({userId, artistId})
+    })
+}
+
 const initialstate = {
     user: null
 }

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import * as albumActions from '../../store/album'
 import { useEffect } from 'react'
 import './AlbumPage.css'
+import Follow from '../Follow'
 
 //Right now I am rendering this page on a page load.  Maybe if I rendered it from a parent component thi would solve my bug?
 
@@ -32,6 +33,7 @@ const AlbumPage = () => {
         <div className="album-art">
           <img src={album.albumArt} />
         </div>
+        <Follow />
         </>
       }
       </div>
