@@ -93,7 +93,7 @@ const songData = [
     songLink: "https://res.cloudinary.com/alex-clough/video/upload/v1619726430/near%2C%20far%2C%20beyond%20mp3/07_-_Incantation_gdk6wh.mp3",
     artistId: 1,
     albumId: 1,
-  }
+  },
 //   {
 //     name: "Marseilles",
 //     songLink:

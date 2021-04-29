@@ -4,6 +4,7 @@ const usersRouter = require('./users.js')
 const albumsRouter = require('./albums.js')
 const followsRouter = require('./follows.js')
 const collectionRouter = require('./collection.js')
+const commentRouter = require('./comments.js')
 const asyncHandler = require("express-async-handler");
 
 
@@ -12,6 +13,9 @@ router.use('/users', usersRouter)
 router.use('/albums', albumsRouter)
 router.use('/follows', followsRouter)
 router.use('/collection', collectionRouter)
+router.use('/comments', commentRouter)
+
+
 //***********DELETE LATER *****/
 // const { setTokenCookie, requireAuth } = require("../../utils/auth.js");
 // const { User } = require("../../db/models");

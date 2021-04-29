@@ -61,7 +61,7 @@ const albumData = [
     description:
       "Praesent consectetur lacus in lacus blandit, vel consectetur libero elementum. Suspendisse et viverra nisl. Proin faucibus risus vitae leo venenatis vestibulum. Ut id nisl accumsan, sagittis arcu eget, molestie tellus. Donec mollis ipsum augue, ut lobortis purus luctus ut. Aenean in est ut nisl sollicitudin dapibus ut quis dolor. Aliquam.",
     albumArt:
-      "https://res.cloudinary.com/alex-clough/video/upload/v1619726285/Steve%20Whipple/Clocks_Tick_dffbfn.mp3",
+      "https://res.cloudinary.com/alex-clough/image/upload/v1619726885/Steve%20Whipple/Artist_image_dhxvke.png",
     artistId: 3,
   },
   // 5
