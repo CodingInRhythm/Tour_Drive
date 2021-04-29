@@ -21,24 +21,30 @@ const UserProfilePage = () => {
     FetchFollows()
     },[])
 
+   
+
     useEffect(() => {
         async function FetchCollection() {
             const res = await fetch (`/api/collection/${id}`)
             let data = await res.json()
-            console.log(data)
+            console.log(data.Albums)
             setCollection(data.Albums)
-
-
+            
+            
         }
         FetchCollection()
     }, [])
-
+    
+    console.log(collection)
     return (
         <>
             <h1>{user.username}</h1>
             <h1>Follows</h1>
             {follows && follows.map((follow => (<Link to="/artists/:id"><img src={follow.avatarUrl} /></Link>)
             ))}
+            <h1>Collections</h1>
+            {collection && collection.map((album) => (
+            <Link to={`/albums/${album.id}`}><img src={album.albumArt}></img></Link>))}
 
 
         </>
