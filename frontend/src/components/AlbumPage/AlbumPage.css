@@ -5,14 +5,35 @@
     'left left middle middle right';
 }
 
-.music-player {
+.album-left{
     grid-area: left;
+    
 }
 
-.album-art {
+.album-center{
     grid-area: middle;
 }
 
-.album-name {
+.album-art {
+    height: 25vh;
+    width: 15vw;
+    grid-area: middle;
+}
+.album-right {
+    grid-area: right;
+    display: flex;
+
+}
+
+.album-artist {
     grid-area: left;
+}
+
+.album-name {
+    font-family: 'Helvetica-Neue';
+    font-size: 1.5em;
+}
+
+.artist-name {
+    font-size: 1.10em;
 }

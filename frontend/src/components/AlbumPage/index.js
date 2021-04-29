@@ -23,21 +23,36 @@ const AlbumPage = () => {
   
   
     return (
-      <div className="album-page">   
-        {album && 
-        <>
-        <div>
-          <img src={album.Artist.avatarUrl}/>
-        </div>
-        <p className="album-name">{album.name} by {album.Artist.name}</p>
-        <div className="music-player"><MusicPlayer tracks={album.Songs} /></div>
-        <div className="album-art">
-          <img src={album.albumArt} />
-        </div>
-        <Follow />
-        <Support />
-        </>
-      }
+      <div className="album-page">
+        {album && (
+          <>
+            <div className="album-left">
+              <p className="album-artist">
+                <p class="album-name">{album.name}></p>
+                <p>
+                  by <span className="artist-name">{album.Artist.name}</span>
+                </p>
+                <Support />
+              </p>
+              <div className="music-player">
+                <MusicPlayer tracks={album.Songs} />
+              </div>
+            </div>
+            <div className="album-center"></div>
+
+            <img
+              className="album-art"
+              src="https://codinginrhythmbucket.s3.amazonaws.com/near_far_beyond/Cover+Artwork.png"
+            />
+
+            <div className="album-right">
+              <div>
+                <img src={album.Artist.avatarUrl} />
+                <Follow />
+              </div>
+            </div>
+          </>
+        )}
       </div>
     );
 }

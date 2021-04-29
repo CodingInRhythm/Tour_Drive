@@ -28,6 +28,20 @@ const MusicPlayer = ({tracks}) => {
 	    }
 	  }, [1000]);
   }
+  const onScrub = (value) => {
+    // Clear any timers already running
+    clearInterval(intervalRef.current);
+    audioRef.current.currentTime = value;
+    setTrackProgress(audioRef.current.currentTime);
+  };
+
+  const onScrubEnd = () => {
+    // If not already playing, start
+    if (!isPlaying) {
+      setIsPlaying(true);
+    }
+    startTimer();
+  };
 
 
     /////////           useEffects
@@ -37,7 +51,9 @@ const MusicPlayer = ({tracks}) => {
       console.log('here???useEffect')
       if (isPlaying) {
         audioRef.current.play();
+        startTimer()
       } else {
+        clearInterval(intervalRef.current)
         audioRef.current.pause();
       }
     }, [isPlaying]);
@@ -72,8 +88,20 @@ const MusicPlayer = ({tracks}) => {
       <>
         {tracks.map((song, idx) => (
           <div>
-            <h2 className="name">{song.name}</h2>
-            <AudioControls idx={idx} TrackIndex={trackIndex} setTrackIndex={setTrackIndex} onPlayPauseClick={setIsPlaying} isPlaying={isPlaying}/>
+            
+            <AudioControls
+              song={song}
+              idx={idx}
+              TrackIndex={trackIndex}
+              setTrackIndex={setTrackIndex}
+              onPlayPauseClick={setIsPlaying}
+              isPlaying={isPlaying}
+              trackProgress={trackProgress}
+              duration={duration}
+              onScrub={onScrub}
+              onScrubEnd={onScrubEnd}
+            />
+         
           </div>
         ))}
         {/* <audio controls>
