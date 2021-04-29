@@ -11,7 +11,11 @@ module.exports = {
       Example:
       */
       let users = [
-  
+        {
+          username: "TestUser",
+          email: "Testuser@user.com",
+          hashedPassword: bcrypt.hashSync("password"),
+        },
       ];
      
 
