@@ -12,11 +12,11 @@ const UserProfilePage = () => {
 
         async function FetchFollows() {
         const res =  await fetch (`/api/follows/${id}`)
-        console.log(res)
+        
         let data = await res.json()
-        console.log(data.Artists)
+       
         setFollows(data.Artists)
-        console.log(follows)
+        
     }
     FetchFollows()
     },[])
@@ -24,12 +24,15 @@ const UserProfilePage = () => {
     useEffect(() => {
         async function FetchCollection() {
             const res = await fetch (`/api/collection/${id}`)
-            let data = res.json()
+            let data = await res.json()
+            console.log(data)
             setCollection(data.Albums)
 
 
         }
+        FetchCollection()
     }, [])
+
     return (
         <>
             <h1>{user.username}</h1>

@@ -16,8 +16,6 @@ const follows = await db.User.findByPk(id, {
     // }
 
 })
-
-console.dir(follows)
 res.json(follows)
 })
 

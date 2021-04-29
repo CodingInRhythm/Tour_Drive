@@ -1,7 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const User_Collection = sequelize.define('User_Collection', {
-    artistId: DataTypes.INTEGER,
+    albumId: DataTypes.INTEGER,
     userId: DataTypes.INTEGER
   }, {});
   User_Collection.associate = function(models) {
