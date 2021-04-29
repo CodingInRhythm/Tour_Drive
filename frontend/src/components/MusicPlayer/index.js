@@ -50,21 +50,25 @@ const MusicPlayer = ({tracks}) => {
 
     /////////           useEffects
 
-
+  ///this one basically sees if state is Playing, then plays track
     useEffect(() => {
-      console.log('here???useEffect')
-      if (isPlaying) {
+      console.log('helloooo')
+      console.log('useEffect 1', isPlaying)
+      if (isPlaying === true) {
+        audioRef.current.pause()
+         audioRef.current = new Audio(songLink);
         audioRef.current.play();
         // startTimer()
       } else {
         clearInterval(intervalRef.current)
         audioRef.current.pause();
       }
-    }, [isPlaying]);
+    }, [trackIndex, isPlaying]);
 
 
-
+//cleans up 
     useEffect(() => {
+      console.log('useEffect 2')
       // Pause and clean up on unmount
       return () => {
         audioRef.current.pause();
@@ -72,22 +76,25 @@ const MusicPlayer = ({tracks}) => {
       };
     }, []);
 
+//// 
+    // useEffect(() => {
+    //   console.log('useEffect 3')
+    //   audioRef.current.pause();
 
-    useEffect(() => {
-      audioRef.current.pause();
-
-      audioRef.current = new Audio(songLink);
-      // setTrackProgress(audioRef.current.currentTime);
-
-      if (isReady.current) {
-        audioRef.current.play();
-        setIsPlaying(true);
-        // startTimer();
-      } else {
-        // Set the isReady ref as true for the next pass
-        isReady.current = true;
-      }
-    }, [trackIndex]);
+    
+      
+    //   // setTrackProgress(audioRef.current.currentTime);
+      
+    //   if (isReady.current) {
+    //    
+    //     audioRef.current.play();
+    //     setIsPlaying(true);
+    //     // startTimer();
+    //   } else {
+    //     // Set the isReady ref as true for the next pass
+    //     isReady.current = true;
+    //   }
+    // }, [trackIndex]);
 
     const { duration } = audioRef.current;
   
@@ -101,7 +108,7 @@ const MusicPlayer = ({tracks}) => {
               idx={idx}
               TrackIndex={trackIndex}
               setTrackIndex={setTrackIndex}
-              onPlayPauseClick={setIsPlaying}
+              setIsPlaying={setIsPlaying}
               isPlaying={isPlaying}
               // trackProgress={trackProgress}
               duration={duration}

@@ -1,12 +1,12 @@
 import './AudioControls.css'
 import { useRef } from 'react'
 
-const AudioControls = ({song, idx, setTrackIndex, TrackIndex, onPlayPauseClick, isPlaying, trackProgress, duration, onScrub, onScrubEnd}) => {
+const AudioControls = ({song, idx, setTrackIndex, TrackIndex, setIsPlaying, isPlaying, trackProgress, duration, onScrub, onScrubEnd}) => {
    const handlePlayClick = () => {
      
      
-       onPlayPauseClick(true)
-        setTrackIndex(idx)
+       setIsPlaying(true)
+        setTrackIndex(idx) //chanes trackIndex which changes songLink?
    }
    const audioRef = useRef(new Audio(song.songLink))
    let trackInSeconds = audioRef.current.duration
@@ -30,7 +30,7 @@ const AudioControls = ({song, idx, setTrackIndex, TrackIndex, onPlayPauseClick, 
           <button
             type="button"
             className="pause"
-            onClick={() => onPlayPauseClick(false)}
+            onClick={() => setIsPlaying(false)}
             aria-label="Pause"
           >
             <i class="fas fa-pause"></i>
