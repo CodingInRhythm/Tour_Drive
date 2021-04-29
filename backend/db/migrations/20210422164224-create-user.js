@@ -10,20 +10,20 @@ module.exports = {
       },
       username: {
         allowNull: false,
-        type: Sequelize.STRING(30),
+        type: Sequelize.TEXT,
         unique: true,
       },
       email: {
         allowNull: false,
-        type: Sequelize.STRING(256),
+        type: Sequelize.TEXT,
         unique: true,
       },
       hashedPassword: {
         allowNull: false,
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
       imageUrl: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
       createdAt: {
         allowNull: false,

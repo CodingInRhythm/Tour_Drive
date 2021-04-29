@@ -1,5 +1,5 @@
 'use strict';
-const userCollectionData = require('./userCollection.js')
+const userCollectionData = require('../../data/userCollection.js')
 module.exports = {
   up: (queryInterface, Sequelize) => {
     /*

@@ -10,18 +10,18 @@ module.exports = {
       },
       name: {
         allowNull: false,
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
       description: {
         allowNull: false,
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
       release_date: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       albumArt: {
         allowNull: false,
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
       artistId: {
         allowNull: false,

@@ -2,14 +2,14 @@ let firstGroup = []
 let secondGroup = []
 let thirdGroup = []
 let fourthGroup = []
-for (let i =0; i < 20; i++) {
+for (let i =1; i < 20; i++) {
 let collectionObj = {}
 collectionObj.userId = i
 collectionObj.albumId = 1
 firstGroup.push(collectionObj)
 }
 
-for (let i = 0; i < 40; i++) {
+for (let i = 1; i < 40; i++) {
   let collectionObj = {};
   collectionObj.userId = i;
   collectionObj.albumId = 2;
@@ -27,7 +27,7 @@ for (let i = 10; i < 30; i=i+2) {
   let collectionObj = {};
   collectionObj.userId = i;
   collectionObj.albumId = 4;
-  fourthgroup.push(collectionObj);
+  fourthGroup.push(collectionObj);
 }
 
 exportGroup = [...firstGroup, ...secondGroup, ...thirdGroup]

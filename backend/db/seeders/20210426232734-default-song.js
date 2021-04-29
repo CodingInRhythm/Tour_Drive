@@ -1,5 +1,5 @@
 'use strict';
-const songData = require('./songData.js')
+const songData = require('../../data/songData.js')
 module.exports = {
   up: (queryInterface, Sequelize) => {
     /*
