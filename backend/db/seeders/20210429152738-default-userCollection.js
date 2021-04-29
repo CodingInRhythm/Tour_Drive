@@ -1,5 +1,5 @@
 'use strict';
-const albumData = require('./albumData.js')
+const userCollectionData = require('./userCollection.js')
 module.exports = {
   up: (queryInterface, Sequelize) => {
     /*
@@ -8,14 +8,13 @@ module.exports = {
 
       Example:
       */
-   return queryInterface.bulkInsert('Albums', 
+   return queryInterface.bulkInsert('User_Collections', 
   //  [{
-  //    name: 'near, far, beyond',
-  //    description: "Might be the greatest album of all time",
-  //    albumArt: 'https://randomuser.me/api/portraits/thumb/women/32.jpg',
-  //    artistId: 1,
-  //  }]
-  albumData, {});
+  //    name: 'John Doe',
+  //    isBetaMember: false
+  //  }],
+  userCollectionData, 
+   {});
   },
 
   down: (queryInterface, Sequelize) => {
@@ -25,6 +24,6 @@ module.exports = {
 
       Example:
       */
-   return queryInterface.bulkDelete('Albums', null, {});
+   return queryInterface.bulkDelete('User_Collections', null, {});
   }
 };

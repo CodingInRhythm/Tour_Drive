@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import * as sessionActions from '../../store/session'
+import { Link } from 'react-router-dom'
 
 const ProfileButton = ({user}) => {
     const dispatch = useDispatch()
@@ -23,6 +24,7 @@ const ProfileButton = ({user}) => {
     
     const logout = (e) => {
         e.preventDefault()
+
         dispatch(sessionActions.logout());
     }
     
@@ -32,13 +34,14 @@ const ProfileButton = ({user}) => {
           <i className="fas fa-record-vinyl"></i>
         </button>
         {showMenu && (
-            <ul>
-                <li>{user.username}</li>
-                <li>{user.email}</li>
-                <button onClick={logout}>Log Out</button>
-            </ul>
+          <ul>
+            <li>{user.username}</li>
+            <li>{user.email}</li>
+            <button onClick={logout}>
+              <Link to="/">Log Out</Link>
+            </button>
+          </ul>
         )}
-
       </div>
     );
 }

@@ -1,5 +1,7 @@
 'use strict';
 
+const artistData = require ('./artistData.js')
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
     /*
@@ -10,14 +12,15 @@ module.exports = {
       */
    return queryInterface.bulkInsert(
      "Artists",
-     [
-       {
-         name: "Alex Clough",
-         bio: "He was a good man",
-         location: "Everywhere",
-         avatarUrl: "https://randomuser.me/api/portraits/thumb/women/32.jpg",
-       },
-     ],
+    //  [
+    //    {
+    //      name: "Alex Clough",
+    //      bio: "He was a good man",
+    //      location: "Everywhere",
+    //      avatarUrl: "https://randomuser.me/api/portraits/thumb/women/32.jpg",
+    //    },
+    //  ],
+    artistData,
      {}
    );
   },
