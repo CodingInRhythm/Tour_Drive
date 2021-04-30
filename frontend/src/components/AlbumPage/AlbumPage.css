@@ -37,3 +37,8 @@
 .artist-name {
     font-size: 1.10em;
 }
+
+.artist-pic {
+    height: 100px;
+    width: 100px;
+}

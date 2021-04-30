@@ -3,14 +3,17 @@ const db = require("../../db/models/");
 
 const router = express.Router();
 
-// router.get("/:id", async (req, res) => {
-//   console.log("here?");
-//   const id = req.params.id;
-//   const userCollection = await db.User.findByPk(id, {
-//     include: db.Album,
-//   });
-//   res.json(userCollection);
-// });
+router.get("/:id", async (req, res) => {
+  console.log("here?");
+  const id = req.params.id;
+  const comments = await db.User_Collection.findAll({
+   where: {
+        albumId: id
+   },
+   include: [db.Album, db.User ]
+  });
+  res.json(comments);
+});
 
 router.post("/", async (req, res) => {
   const { comment, userId, albumId } = req.body;

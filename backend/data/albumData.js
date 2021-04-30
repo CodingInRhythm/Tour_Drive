@@ -81,6 +81,17 @@ const albumData = [
       "https://res.cloudinary.com/alex-clough/image/upload/v1619727007/Andrew%20Angus/Drew_Angus_Hold_onto_Something_Cover_tpm6fp.jpg",
     artistId: 4,
   },
+
+  // 6
+
+  {
+    name: "Brooklyn Elegy",
+    description:
+      "Cras sed velit purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed ut augue ut metus ornare varius. Nunc fermentum mi vel orci sagittis, quis varius tellus cursus. In volutpat porta tortor, vitae placerat augue dictum a. Praesent lobortis ligula id feugiat consequat. Vivamus viverra justo at malesuada semper. Nulla facilisi. Mauris bibendum dolor massa, eu maximus ante pellentesque eu.",
+    albumArt:
+      "https://res.cloudinary.com/alex-clough/image/upload/v1619748139/John%20Gray/johngray_cover1_hhtgry.jpg",
+    artistId: 5,
+  },
 ];
 
 

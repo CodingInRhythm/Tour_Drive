@@ -6,6 +6,7 @@ import { useEffect } from 'react'
 import './AlbumPage.css'
 import Follow from '../Follow'
 import Support from '../SupportButton'
+import CommentDisplay from '../CommentDisplay'
 
 //Right now I am rendering this page on a page load.  Maybe if I rendered it from a parent component thi would solve my bug?
 
@@ -28,7 +29,7 @@ const AlbumPage = () => {
           <>
             <div className="album-left">
               <p className="album-artist">
-                <p class="album-name">{album.name}></p>
+                <p class="album-name">{album.name}</p>
                 <p>
                   by <span className="artist-name">{album.Artist.name}</span>
                 </p>
@@ -42,12 +43,15 @@ const AlbumPage = () => {
 
             <img
               className="album-art"
-              src="https://codinginrhythmbucket.s3.amazonaws.com/near_far_beyond/Cover+Artwork.png"
+              src={album.albumArt}
             />
+            <div className='comments-container'>
+              <CommentDisplay albumId={album.id} />
+            </div>
 
             <div className="album-right">
               <div>
-                <img src={album.Artist.avatarUrl} />
+                <img className="artist-pic" src={album.Artist.avatarUrl} />
                 <Follow />
               </div>
             </div>

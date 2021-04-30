@@ -6,6 +6,7 @@ for (let i =1; i < 20; i++) {
 let collectionObj = {}
 collectionObj.userId = i
 collectionObj.albumId = 1
+collectionObj.comment = 'great job!'
 firstGroup.push(collectionObj)
 }
 

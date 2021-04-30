@@ -60,10 +60,15 @@ module.exports = (sequelize, DataTypes) => {
       through: 'User_Follow',
       foreignKey: 'userId'
     })
-    User.belongsToMany(models.Album, {
-      through: 'User_Collection',
-      foreignKey: 'userId'
-    })
+    const columnMapping = {
+      through: "User_Collection",
+      foreignKey: "userId",
+      otherKey: "albumId",
+    };
+    User.belongsToMany(models.Album, columnMapping)
+    User.hasMany(models.User_Collection, 
+      { foreignKey: "userId" });
+
   };
 
   User.prototype.toSafeObject = function () {

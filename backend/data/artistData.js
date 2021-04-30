@@ -64,6 +64,14 @@ const ArtistData = [
   //     "https://codinginrhythmbucket.s3.amazonaws.com/Andrew+Angus/Drew+Angus+Hold+onto+Something+Cover.jpg",
   //   location: "Brooklyn, NY",
   // },
+  {
+    name: "John Gray",
+    bio:
+      "Praesent ligula nunc, eleifend malesuada turpis id, convallis ullamcorper est. Fusce id purus neque. Curabitur suscipit magna quis dolor facilisis cursus. Quisque nec odio lorem. Nunc vehicula massa et mattis ultricies. Proin commodo eleifend nisl. Duis ac magna ex. Pellentesque lacinia, erat ut lobortis facilisis, augue nibh vestibulum nisl, vitae porta erat nulla quis orci. Nam id sem tempus, ultrices nulla non, varius tellus. Duis vestibulum mattis nisi, tincidunt accumsan mauris tempor et. Praesent porttitor augue diam, et vestibulum velit mollis eget. Sed laoreet fermentum ipsum, nec vehicula nisl ultrices nec. Quisque vitae erat tincidunt, semper felis eget, iaculis ligula.",
+    avatarUrl:
+      "https://res.cloudinary.com/alex-clough/image/upload/v1619748144/John%20Gray/Front_cover_fing0m.jpg",
+    location: "Brooklyn, NY",
+  },
 ];
 /*
 {
