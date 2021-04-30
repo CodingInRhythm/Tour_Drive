@@ -64,6 +64,10 @@ const ArtistData = [
   //     "https://codinginrhythmbucket.s3.amazonaws.com/Andrew+Angus/Drew+Angus+Hold+onto+Something+Cover.jpg",
   //   location: "Brooklyn, NY",
   // },
+
+  // 5
+
+  
   {
     name: "John Gray",
     bio:

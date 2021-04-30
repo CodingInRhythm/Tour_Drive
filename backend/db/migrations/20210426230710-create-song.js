@@ -26,6 +26,9 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: { model: "Albums" },
       },
+      songLength: {
+        type: Sequelize.STRING,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

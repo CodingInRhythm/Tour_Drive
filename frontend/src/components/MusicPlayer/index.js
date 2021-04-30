@@ -13,6 +13,55 @@ const MusicPlayer = ({tracks}) => {
     const intervalRef = useRef();
     const isReady = useRef(false);
     
+   //trackIndex use Effect
+    useEffect(() => {
+        console.log('useEffect # 1')
+        if (isPlaying) {
+        audioRef.current.pause()
+        audioRef.current = new Audio(tracks[trackIndex].songLink)
+        audioRef.current.play()
+        setIsPlaying(true)
+        }
+        // startTimer()
+      }, [trackIndex]);
+
+
+    useEffect(() => {
+   console.log("useEffect # 2");
+      if (isPlaying === false) {
+        audioRef.current.pause();
+        // startTimer()
+      } else {
+        audioRef.current.play()
+      }
+    }, [isPlaying]);
+    
+    return (
+      <>
+        {tracks.map((song, idx) => (
+          <div>
+            
+            <AudioControls
+              song={song}
+              idx={idx}
+              trackIndex={trackIndex}
+              setTrackIndex={setTrackIndex}
+              setIsPlaying={setIsPlaying}
+              isPlaying={isPlaying}
+              // trackProgress={trackProgress}
+              // duration={duration}
+              // onScrub={onScrub}
+              // onScrubEnd={onScrubEnd}
+            />
+         
+          </div>
+        ))}
+        {/* <audio controls>
+        <source src={songUrl}/>
+      </audio> */}
+      </>
+    );
+    }
     //functions
 
     //this function is for a slider which I'm not implementing as MVP
@@ -51,30 +100,6 @@ const MusicPlayer = ({tracks}) => {
     /////////           useEffects
 
   ///this one basically sees if state is Playing, then plays track
-    useEffect(() => {
-      console.log('helloooo')
-      console.log('useEffect 1', isPlaying)
-      if (isPlaying === true) {
-        audioRef.current.pause()
-         audioRef.current = new Audio(songLink);
-        audioRef.current.play();
-        // startTimer()
-      } else {
-        clearInterval(intervalRef.current)
-        audioRef.current.pause();
-      }
-    }, [trackIndex, isPlaying]);
-
-
-//cleans up 
-    useEffect(() => {
-      console.log('useEffect 2')
-      // Pause and clean up on unmount
-      return () => {
-        audioRef.current.pause();
-        clearInterval(intervalRef.current);
-      };
-    }, []);
 
 //// 
     // useEffect(() => {
@@ -96,34 +121,18 @@ const MusicPlayer = ({tracks}) => {
     //   }
     // }, [trackIndex]);
 
-    const { duration } = audioRef.current;
-  
-    return (
-      <>
-        {tracks.map((song, idx) => (
-          <div>
-            
-            <AudioControls
-              song={song}
-              idx={idx}
-              TrackIndex={trackIndex}
-              setTrackIndex={setTrackIndex}
-              setIsPlaying={setIsPlaying}
-              isPlaying={isPlaying}
-              // trackProgress={trackProgress}
-              duration={duration}
-              // onScrub={onScrub}
-              // onScrubEnd={onScrubEnd}
-            />
-         
-          </div>
-        ))}
-        {/* <audio controls>
-        <source src={songUrl}/>
-      </audio> */}
-      </>
-    );
-}
+  //trackIndex useEffect
 
+
+  // //cleans up 
+  //   useEffect(() => {
+  //     console.log('useEffect 2')
+  //     // Pause and clean up on unmount
+  //     return () => {
+  //       audioRef.current.pause();
+  //       // clearInterval(intervalRef.current);
+  //     };
+  //   }, []);
+    // const { duration } = audioRef.current;
 
 export default MusicPlayer
