@@ -74,6 +74,13 @@ export const follow = (userId, artistId) => async (dispatch) => {
     })
 }
 
+export const unfollow = (userId, artistId) => async (dispatch) => {
+  const res = await csrfFetch("/api/follows", {
+    method: "DELETE",
+    body: JSON.stringify({ userId, artistId }),
+  });
+};
+
 export const support = (userId, albumId) => async (dispatch) => {
 
     const res = await csrfFetch('/api/collection', {

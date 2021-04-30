@@ -43,7 +43,7 @@ const AudioControls = ({song, idx, setTrackIndex, trackIndex, setIsPlaying, isPl
             <i class="fas fa-play"></i>
           </button>
         )}
-        <p>{idx + 1}</p>
+        <p>{`${idx + 1}:`}</p>
         <p>{song.name}</p>
         <p>{trackLength}</p>
         </div>

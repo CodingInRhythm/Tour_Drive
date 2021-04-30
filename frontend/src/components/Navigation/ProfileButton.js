@@ -35,7 +35,9 @@ const ProfileButton = ({user}) => {
         </button>
         {showMenu && (
           <ul>
-            <li>{user.username}</li>
+            <Link to='/user'>
+              <li>{user.username}</li>
+            </Link>
             <li>{user.email}</li>
             <button onClick={logout}>
               <Link to="/">Log Out</Link>

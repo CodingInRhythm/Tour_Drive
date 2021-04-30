@@ -29,4 +29,15 @@ router.post('/', async(req, res) => {
     res.json(userFollows)
 })
 
+router.delete('/', async(req, res) => {
+    const { userId, artistId } = req.body
+
+    await db.User_Follow.destroy({
+        where: {
+            userId,
+            artistId
+        }
+    })
+})
+
 module.exports = router;

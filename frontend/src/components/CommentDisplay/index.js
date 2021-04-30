@@ -17,8 +17,8 @@ const CommentDisplay = ({albumId}) => {
     }, [])
     return (
         <>
-        {commentData.length && commentData.map((comment) => (
-            <div className="comment-container"> 
+        {commentData.length && commentData.map((comment, idx) => (
+            <div className="comment-container" key={idx}> 
                 <img src={comment.User.imageUrl}></img>
                 <p><span>{`${comment.User.username}: `}</span>{comment.comment}</p>
             </div>
