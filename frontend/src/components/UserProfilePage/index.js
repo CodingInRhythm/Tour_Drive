@@ -8,6 +8,7 @@ const UserProfilePage = () => {
     const user = useSelector((state) => state.session.user)
     const [follows, setFollows] = useState([])
     const [collection, setCollection] = useState([])
+    
     const id = user.id
   
     useEffect(() => {
@@ -18,6 +19,7 @@ const UserProfilePage = () => {
         let data = await res.json()
        
         setFollows(data.Artists)
+       
         
     }
     FetchFollows()
@@ -29,15 +31,16 @@ const UserProfilePage = () => {
         async function FetchCollection() {
             const res = await fetch (`/api/collection/${id}`)
             let data = await res.json()
-            console.log(data.Albums)
+            console.log(data)
             setCollection(data.Albums)
+            
             
             
         }
         FetchCollection()
     }, [])
     
-    console.log(collection)
+
     return (
         <>
             <h1>{user.username}</h1>

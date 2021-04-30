@@ -4,10 +4,13 @@ const db = require("../../db/models/");
 const router = express.Router();
 
 router.get("/:id", async (req, res) => {
-  console.log('here?')
+  
   const id = req.params.id;
   const userCollection = await db.User.findByPk(id, {
-    include: db.Album
+    include: {
+      model: db.Album,
+      include: db.Artist
+    }
   })
   res.json(userCollection)
 });
