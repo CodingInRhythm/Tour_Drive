@@ -14,6 +14,8 @@ const AlbumCard = ({album}) => {
     const [errors, setErrors] = useState([])
     const [commentFormDisplayName, setCommentFormDisplayName] = useState("")
     const [commentDiv, setCommentDiv] = useState("hidden")    
+    
+    ///Functions -- can refactor this into one function?
     const handleSubmit = async (e) => {
         e.preventDefault()
         // if(comment === "") {
@@ -36,6 +38,28 @@ const AlbumCard = ({album}) => {
 
     }
 
+    const editComment = async (e) => {
+      e.preventDefault()
+
+      const res = await csrfFetch('/api/comments', {
+        method: 'PUT',
+        body: JSON.stringify({comment, userId})
+      })
+      const data = await res.json()
+
+      setCommentDiv("");
+      setCommentFormDisplayName("none");
+    }
+
+    const deleteComment = async (e) => {
+      e.preventDefault()
+      const res = await csrfFetch('/api/comments', {
+        method: 'DELETE',
+        body: JSON.stringify({userId, albumId})
+      })
+      setCommentFormDisplayName("");
+      setCommentDiv("none");
+    }
 
     return (
       <>
@@ -60,6 +84,14 @@ const AlbumCard = ({album}) => {
         </div>
         <div className="comment" style={{display:commentDiv}}>
             <p>{comment}</p>
+            <div className="comment-edit-delete-container"></div>
+            <form onSubmit={editComment}>
+              <button type='submit' onClick={(e) => {setCommentFormDisplayName("")}}>Edit</button>
+            </form >
+            <form onSubmit={deleteComment}>
+              <button type="submit">Delete</button>
+            </form>
+
         </div>
         </div>
       </>

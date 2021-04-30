@@ -39,16 +39,12 @@ const AlbumPage = () => {
                 <MusicPlayer tracks={album.Songs} />
               </div>
             </div>
-            <div className="album-center"></div>
-
-            <img
-              className="album-art"
-              src={album.albumArt}
-            />
-            <div className='comments-container'>
-              <CommentDisplay albumId={album.id} />
+            <div className="album-center">
+              <img className="album-art" src={album.albumArt} />
+              <div className="comments-container">
+                <CommentDisplay albumId={album.id} />
+              </div>
             </div>
-
             <div className="album-right">
               <div>
                 <img className="artist-pic" src={album.Artist.avatarUrl} />
