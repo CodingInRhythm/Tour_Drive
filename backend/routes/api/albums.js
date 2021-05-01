@@ -3,6 +3,13 @@ const db = require("../../db/models/")
 
 const router = express.Router()
 
+router.get("/", async(req,res) => {
+
+    const albums = await db.Album.findAll()
+
+    return res.json(albums)
+})
+
 router.get("/:id", async(req, res) => {
     const id = req.params.id
     
