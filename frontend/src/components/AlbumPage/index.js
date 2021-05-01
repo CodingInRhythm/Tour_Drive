@@ -29,7 +29,7 @@ const AlbumPage = () => {
     useEffect(() => {
         'making it?'
         dispatch(albumActions.getAlbum(id));
-       
+       setIsLoaded(true)
 
         
     }, [])
@@ -67,7 +67,7 @@ const AlbumPage = () => {
                 {isLoaded && (
                   <>
                   <img className="artist-pic" src={album.Artist.avatarUrl} />
-                  <Follow album={album} user={user} artist={artist}/>
+                  <Follow album={album} user={user}/>
                 </>
                 )}
               </div>

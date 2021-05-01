@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { follow, unfollow } from '../../store/session'
 import { useEffect, useState } from 'react'
-import { csrfFetch } from 'react-redux'
+import { csrfFetch } from '../../store/csrf'
 
 // const Follow = () => {
 //     const dispatch = useDispatch()
@@ -30,7 +30,7 @@ import { csrfFetch } from 'react-redux'
 // }
 
 
-const Follow = ({user, artist, album}) => {
+const Follow = ({user, album}) => {
     const dispatch = useDispatch();
     const userId = useSelector((state) => state.session.user.id)
     const artistId = useSelector((state) => state.album.album.Artist.id)
@@ -39,24 +39,37 @@ const Follow = ({user, artist, album}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        if(!followed) {
+        dispatch((follow(userId, artistId)))
+        setFollowed(true)
+        }
+        else {
+          dispatch(unfollow(userId, artistId))
+          setFollowed(false)
+        }
 
     }
 
     useEffect(() => {
 
-        const FetchFollows = async () => {
-        const resFollows = await csrfFetch(`/api/follows/${user.id}`);
-              const allFollows = await resFollows.json();
+      const FetchFollows = async () => {
+          const resFollows = await csrfFetch(`/api/follows/${user.id}`);
+          const allFollows = await resFollows.json();
 
-              let followArray = allFollows.Artists.filter(
-              (artist) => artist.id === album.artistId
-            );
-
-         if (followArray.length) {
-             setFollows(true);
-           }
+          let followArray = allFollows.Artists.filter(
+          (artist) => artist.id === album.artistId
+          );
+            console.log(followArray)
+          if (followArray.length) {
+              setFollowed(true);
+          }
+          else{
+            setFollowed(false)
+          }
         }
-  },[])
+
+        FetchFollows()
+    },[])
 
 
 

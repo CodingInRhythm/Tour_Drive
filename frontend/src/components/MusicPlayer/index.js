@@ -9,7 +9,8 @@ const MusicPlayer = ({tracks}) => {
 
     const { name, songLink } = tracks[trackIndex];
     
-    const audioRef = useRef(new Audio(songLink));
+    const audioRef = useRef(new Audio());
+    // const audioRef = useRef(new Audio(songLink));
     const intervalRef = useRef();
     const isReady = useRef(false);
     
@@ -18,7 +19,8 @@ const MusicPlayer = ({tracks}) => {
         console.log('useEffect # 1')
         if (isPlaying) {
         audioRef.current.pause()
-        audioRef.current = new Audio(tracks[trackIndex].songLink)
+        audioRef.current = new Audio()
+        // audioRef.current = new Audio(tracks[trackIndex].songLink);
         audioRef.current.play()
         setIsPlaying(true)
         }
