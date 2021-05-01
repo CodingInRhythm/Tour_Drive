@@ -15,8 +15,8 @@
 }
 
 .album-art {
-    height: 25vh;
-    width: 15vw;
+    height: 35vh;
+    width: 25vw;
     grid-area: middle;
 }
 .album-right {

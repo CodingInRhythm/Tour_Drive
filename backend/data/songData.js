@@ -312,57 +312,216 @@ const songData = [
       "https://res.cloudinary.com/alex-clough/video/upload/v1619726257/Andrew%20Angus/12_Wrecking_Ball_LOUDER_8.16_wpymz6.mp3",
     artistId: 4,
     albumId: 5,
-    songLength: "03:41"
+    songLength: "03:41",
   },
 
   // 6
 
   {
     name: "Brooklyn Elegy",
-    songLink: "https://res.cloudinary.com/alex-clough/video/upload/v1619748141/John%20Gray/01_Brooklyn_Elegy_rlyjd1.mp3",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619748141/John%20Gray/01_Brooklyn_Elegy_rlyjd1.mp3",
     artistId: 5,
     albumId: 6,
-    songLength: "03:11"
+    songLength: "03:11",
   },
 
   {
     name: "I'm Hopeful",
-    songLink: "https://res.cloudinary.com/alex-clough/video/upload/v1619748141/John%20Gray/02_I_m_Hopeful_dejbha.mp3",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619748141/John%20Gray/02_I_m_Hopeful_dejbha.mp3",
     artistId: 5,
     albumId: 6,
-    songLength: "03:46"
+    songLength: "03:46",
   },
 
   {
     name: "You'll Turn Out OK",
-    songLink: "https://res.cloudinary.com/alex-clough/video/upload/v1619748141/John%20Gray/04_You_ll_Turn_Out_Ok_j7awcy.mp3",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619748141/John%20Gray/04_You_ll_Turn_Out_Ok_j7awcy.mp3",
     artistId: 5,
     albumId: 6,
-    songLength: "03:34"
+    songLength: "03:34",
   },
 
   {
     name: "Cayuga",
-    songLink: "https://res.cloudinary.com/alex-clough/video/upload/v1619748144/John%20Gray/05_Cayuga_eftihh.mp3",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619748144/John%20Gray/05_Cayuga_eftihh.mp3",
     artistId: 5,
     albumId: 6,
-    songLength: "04:58"
+    songLength: "04:58",
   },
 
   {
     name: "Aftermath of a Bar Fight",
-    songLink: "https://res.cloudinary.com/alex-clough/video/upload/v1619748141/John%20Gray/06_Aftermath_of_a_Bar_Fight_hudv9y.mp3",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619748141/John%20Gray/06_Aftermath_of_a_Bar_Fight_hudv9y.mp3",
     artistId: 5,
     albumId: 6,
-    songLength: "04:15"
+    songLength: "04:15",
   },
 
   {
     name: "Friday",
-    songLink: "https://res.cloudinary.com/alex-clough/video/upload/v1619748141/John%20Gray/07_Friday_twdftf.mp3",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619748141/John%20Gray/07_Friday_twdftf.mp3",
     artistId: 5,
     albumId: 6,
-    songLength: "03:31"
+    songLength: "03:31",
+  },
+
+  // album 7
+
+  {
+    name: "China Blue",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879642/Adam%20Lomeo/Adam_Lomeo/China_Blue_MSTR_suyn36.mp3",
+    artistId: 6,
+    albumId: 7,
+  },
+  {
+    name: "Tea for Two",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879642/Adam%20Lomeo/Adam_Lomeo/Tea_For_Two_MSTR_zpemf4.mp3",
+    artistId: 6,
+    albumId: 7,
+  },
+  {
+    name: "Three Coins",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879642/Adam%20Lomeo/Adam_Lomeo/Three_Coins_MSTR_mb30iw.mp3",
+    artistId: 6,
+    albumId: 7,
+  },
+  {
+    name: "What a Fool Believes",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879642/Adam%20Lomeo/Adam_Lomeo/What_A_Fool_Believes_MSTR_yi0ngk.mp3",
+    artistId: 6,
+    albumId: 7,
+  },
+  {
+    name: "Just For the Love",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879642/Adam%20Lomeo/Adam_Lomeo/Just_For_The_Love_MSTR_jguxvv.mp3",
+    artistId: 6,
+    albumId: 7,
+  },
+
+  //album 8
+  {
+    name: "I Surrender Dear",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879642/Adam%20Lomeo/Adam_Lomeo/I_Surrender_Dear_MSTR_ct7fzr.mp3",
+    artistId: 6,
+    albumId: 8,
+  },
+  {
+    name: "Fly Me To The Moon",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879640/Adam%20Lomeo/Adam_Lomeo/Fly_Me_To_The_Moon_I_ve_Never_Been_In_Love_Before_MSTR_icaxf1.mp3",
+    artistId: 6,
+    albumId: 8,
+  },
+  {
+    name: "UMMG",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879639/Adam%20Lomeo/Adam_Lomeo/UMMG_MSTR_r8pfvx.mp3",
+    artistId: 6,
+    albumId: 8,
+  },
+  {
+    name: "Autumn in New York",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879639/Adam%20Lomeo/Adam_Lomeo/Autumn_In_New_York_MSTR_gngkf9.mp3",
+    artistId: 6,
+    albumId: 8,
+  },
+  {
+    name: "I Surrender Dear",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879639/Adam%20Lomeo/Adam_Lomeo/Liza_MSTR_a1u2xs.mp3",
+    artistId: 6,
+    albumId: 8,
+  },
+
+  // album 9
+  {
+    name: "The Bet",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879796/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/01_-_The_Bet_vtxxhk.mp3",
+    artistId: 7,
+    albumId: 9,
+  },
+  {
+    name: "Nightwatch",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879798/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/02_-_Nightwatch_oxrkdx.mp3",
+    artistId: 7,
+    albumId: 9,
+  },
+  {
+    name: "Ladybird"
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879802/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/03_-_Ladybird_ixmiok.mp3",
+    songLink: "",
+    artistId: 7,
+    albumId: 9,
+  },
+  {
+    name: "Whelmed",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879800/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/04_-_Whelmed_snu18o.mp3",
+    artistId: 7,
+    albumId: 9,
+  },
+  {
+    name: "Intro to Pearls",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879796/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/05_-_Intro_To_Pearls_feat._Steven_Feifke_hzqbyl.mp3",
+    artistId: 7,
+    albumId: 9,
+  },
+  {
+    name: "Pearls of the Tartar",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879792/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/06_-_Pearls_Of_The_Tartar_sjmbop.mp3",
+    artistId: 7,
+    albumId: 9,
+  },
+  {
+    name: "A Shade of Jade",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879801/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/07_-_A_Shade_Of_Jade_qux69e.mp3",
+    artistId: 7,
+    albumId: 9,
+  },
+  {
+    name: "Seven Angels",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879795/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/08_-_Seven_Angels_v9cl9j.mp3",
+    artistId: 7,
+    albumId: 9,
+  },
+  {
+    name: "Signal Changes",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879793/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/09_-_Signal_Changes_av8ibl.mp3",
+    artistId: 7,
+    albumId: 9,
+  },
+  {
+    name: "Cloud Down",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879798/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/10_-_cloud_down_bheck6.mp3",
+    artistId: 7,
+    albumId: 9,
+  },
+    {
+    name: "Everything I Love",
+    songLink: "https://res.cloudinary.com/alex-clough/video/upload/v1619879797/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/11_-_Everything_I_Love_c7ucyj.mp3",
+    artistId: 7,
+    albumId: 9,
   },
 ];
 /*
