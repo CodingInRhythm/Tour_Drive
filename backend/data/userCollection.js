@@ -5,7 +5,7 @@ function getRandomInt(max) {
 }
 
 let comments = []
-for (let i=0; i < 40, i ++) {
+for (let i=0; i < 40; i++) {
   const comment = fake.lorem.sentence()
   comments.push(comment)
 }
