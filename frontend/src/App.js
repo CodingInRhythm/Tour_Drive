@@ -8,6 +8,7 @@ import Navigation from './components/Navigation'
 import MusicPlayer from './components/MusicPlayer';
 import AlbumPage from './components/AlbumPage';
 import UserProfilePage from './components/UserProfilePage'
+import HomePage from './components/HomePage'
 function App() {
 const dispatch = useDispatch()
 
@@ -33,6 +34,9 @@ const [isLoaded, setIsLoaded] = useState(false)
       </Route>
       <Route path='/user'>
         <UserProfilePage />
+      </Route>
+      <Route exact path="/">
+        <HomePage />
       </Route>
     </Switch>
     )}

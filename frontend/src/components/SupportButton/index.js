@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { csrfFetch } from '../../store/csrf'
 const SupportButton = ({user, album}) => {
     const dispatch = useDispatch()
-    const userId = useSelector((state) => state.session.user.id)
+    const userId = useSelector((state) => state.session.user?.id)
     const albumId = useSelector((state) => state.album.album.id)
 
     const [supported, setSupported] = useState(false)
@@ -32,11 +32,11 @@ const SupportButton = ({user, album}) => {
              setSupported(true);
            }
          };
-         FetchInfo();
+         if(user)FetchInfo();
 
          //now need to perhaps setState
        }, []);
-
+if (!userId) return null
     return (
         <form onSubmit={handleSubmit}>
             <button type='submit'>{supported ? 'Thanks for supporting' : 'Support now!'} </button>

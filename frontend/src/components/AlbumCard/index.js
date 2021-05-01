@@ -8,7 +8,7 @@ import { csrfFetch } from '../../store/csrf'
 const AlbumCard = ({album}) => {
    
 
-    const [comment, setComment] = useState('comment')
+    const [comment, setComment] = useState('')
     const userId = useSelector((state) => state.session.user.id);
     const albumId = album.id
     const [errors, setErrors] = useState([])
@@ -81,8 +81,8 @@ const AlbumCard = ({album}) => {
               <button type="submit">Comment</button>
               {errors && errors.map((error) => (<p>{error}</p>))}
             </form>
-        </div>
-        <div className="comment" style={{display:commentDiv}}>
+          </div>
+          <div className="comment" style={{display:commentDiv}}>
             <p>{comment}</p>
             <div className="comment-edit-delete-container"></div>
             <form onSubmit={editComment}>
@@ -91,8 +91,7 @@ const AlbumCard = ({album}) => {
             <form onSubmit={deleteComment}>
               <button type="submit">Delete</button>
             </form>
-
-        </div>
+         </div>
         </div>
       </>
     );

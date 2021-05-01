@@ -44,8 +44,14 @@ const UserProfilePage = () => {
     return (
         <>
             <h1>{user.username}</h1>
-            <h1>Follows</h1>
-            {follows && follows.map((follow => (<Link to="/artists/:id"><img className="artist-images" src={follow.avatarUrl} /></Link>)
+            <h3>Follows</h3>
+            {follows && follows.map((follow => (
+            <>
+            <Link to="/artists/:id">
+                <img className="artist-images" src={follow.avatarUrl} />
+            </Link>
+            <p><em>{follow.name}</em></p>
+            </>)
             ))}
             <h1>Collections</h1>
             {collection && (

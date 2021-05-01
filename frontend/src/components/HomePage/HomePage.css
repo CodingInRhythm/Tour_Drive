@@ -1,0 +1,16 @@
+.album-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.logged-out {
+    font-family: 'Caveat Brush', cursive;
+    font-size: 2em;
+    color: white;
+}
+
+.home-page-img:hover {
+    box-shadow: 20px 20px 100px black
+}

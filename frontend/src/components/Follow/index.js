@@ -32,7 +32,7 @@ import { csrfFetch } from '../../store/csrf'
 
 const Follow = ({user, album}) => {
     const dispatch = useDispatch();
-    const userId = useSelector((state) => state.session.user.id)
+    const userId = useSelector((state) => state.session.user?.id)
     const artistId = useSelector((state) => state.album.album.Artist.id)
 
     const [followed, setFollowed] = useState(false)
@@ -68,11 +68,11 @@ const Follow = ({user, album}) => {
           }
         }
 
-        FetchFollows()
+        if(user)FetchFollows()
     },[])
 
 
-
+if(!user) return null
   return (
     <form onSubmit={handleSubmit}>
       <button type="submit" >

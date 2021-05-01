@@ -1,0 +1,45 @@
+.navbar-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 50px;
+}
+
+.tour-drive-text {
+    font-family: 'Caveat Brush', cursive;
+    font-size: 2em;
+    color: white;
+}
+
+.tour-drive-logo {
+    color: white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.fa-shuttle-van {
+    font-size: 30px;
+    display: relative;
+    top: 50px;
+}
+
+.fa-record-vinyl {
+    font-size: 40px;
+}
+
+.show-menu {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.show-menu-item {
+  
+    justify-content: flex-end;
+    font-family: 'Caveat Brush', cursive;
+    font-size: .5em;
+    color: white;
+}

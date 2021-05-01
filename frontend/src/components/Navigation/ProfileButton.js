@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import * as sessionActions from '../../store/session'
 import { Link } from 'react-router-dom'
-
+import './ProfileButton.css'
 const ProfileButton = ({user}) => {
     const dispatch = useDispatch()
     const [showMenu, setShowMenu] = useState(false)
@@ -29,22 +29,28 @@ const ProfileButton = ({user}) => {
     }
     
     return (
-      <div>
-        <button onClick={openMenu}>
-          <i className="fas fa-record-vinyl"></i>
-        </button>
-        {showMenu && (
-          <ul>
-            <Link to='/user'>
-              <li>{user.username}</li>
-            </Link>
-            <li>{user.email}</li>
-            <button onClick={logout}>
-              <Link to="/">Log Out</Link>
-            </button>
-          </ul>
-        )}
-      </div>
+      <>
+        <div className="navbar-right">
+          <div className="tour-drive-logo">
+            <span className="tour-drive-text">Tour Drive</span>
+            <i className="fas fa-shuttle-van fa-5X"></i>
+          </div>
+          <button onClick={openMenu}>
+            <i className="fas fa-record-vinyl"></i>
+          </button>
+          {showMenu && (
+            <ul className="show-menu">
+              <Link className="show-menu-item" to="/user">
+                <li>{user.username}</li>
+              </Link>
+              <li className="show-menu-item">{user.email}</li>
+              <button className="show-menu-item" onClick={logout}>
+                <Link to="/">Log Out</Link>
+              </button>
+            </ul>
+          )}
+        </div>
+      </>
     );
 }
 

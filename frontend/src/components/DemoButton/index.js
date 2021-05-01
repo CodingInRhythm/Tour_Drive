@@ -1,5 +1,6 @@
 import { login } from '../../store/session'
 import { useDispatch } from 'react-redux'
+import { NavLink } from 'react-router-dom'
 
 const DemoButton = () => {
     const dispatch = useDispatch()
@@ -8,9 +9,13 @@ const DemoButton = () => {
         return dispatch(login({credential: 'TestUser', password: 'password'}))
     }
     return (
-      <form onSubmit={handleSubmit}>
-        <button type="submit">Login as demo user</button>
-      </form>
+    
+        <form onSubmit={handleSubmit}>
+          <button className="demo-user home-button" type="submit">
+            Login as demo user
+          </button>
+        </form>
+    
     );
 }
 

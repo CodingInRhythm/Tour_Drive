@@ -11,8 +11,8 @@ const MusicPlayer = ({tracks}) => {
     
     const audioRef = useRef(new Audio());
     // const audioRef = useRef(new Audio(songLink));
-    const intervalRef = useRef();
-    const isReady = useRef(false);
+    // const intervalRef = useRef();
+    // const isReady = useRef(false);
     
    //trackIndex use Effect
     useEffect(() => {
