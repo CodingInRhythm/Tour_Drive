@@ -1,0 +1,5 @@
+.user-display {
+    display: flex;
+    align-items: baseline;
+    gap: 75px;
+}

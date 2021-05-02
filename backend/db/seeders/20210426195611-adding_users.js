@@ -15,6 +15,8 @@ module.exports = {
           username: "TestUser",
           email: "Testuser@user.com",
           hashedPassword: bcrypt.hashSync("password"),
+          imageUrl: "https://randomuser.me/api/portraits/thumb/men/65.jpg",
+          largeImageUrl: "https://randomuser.me/api/portraits/men/65.jpg",
         },
       ];
      
@@ -27,7 +29,7 @@ module.exports = {
         userObj.email = user.email
         userObj.hashedPassword = bcrypt.hashSync(user.login.password, 10)
         userObj.imageUrl = user.picture.thumbnail
-        userObj.mediumImageUrl = user.picture.medium
+        userObj.largeImageUrl = user.picture.large
         users.push(userObj)
       })
 ////                                           [{name:'1234, DOB: }]

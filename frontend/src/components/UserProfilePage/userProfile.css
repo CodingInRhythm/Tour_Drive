@@ -1,3 +1,6 @@
+.user-profile-container {
+    font-family: Montserrat
+}
 .collection-images {
     height: 50px;
     width: 50px;
@@ -11,6 +14,33 @@
 }
 
 .collection-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.collection-container {
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.grid-tabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.collection-tab, .follows-tab {
+    list-style-type: none;
+    background-color: whitesmoke
+}
+
+.collection-tab:hover, .follows-tab:hover {
+    cursor: pointer;
+}
+
+.follows-display, .collection-display {
     display: flex;
     flex-direction: row;
 }

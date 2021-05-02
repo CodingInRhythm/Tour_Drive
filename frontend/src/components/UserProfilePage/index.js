@@ -1,13 +1,17 @@
 import { useSelector } from 'react-redux'
 import { useState, useEffect } from 'react'
 import { csrfFetch } from '../../store/csrf'
-import { Link } from 'react-router-dom'
-import AlbumCard from '../AlbumCard'
+
 import './userProfile.css'
+import UserDisplay from '../UserDisplay'
+import FollowsDisplay from '../FollowsDisplay'
+import CollectionDisplay from '../CollectionDisplay'
 const UserProfilePage = () => {
     const user = useSelector((state) => state.session.user)
     const [follows, setFollows] = useState([])
     const [collection, setCollection] = useState([])
+    const [showFollowers, setShowFollowers] = useState(true)
+    const [showCollection, setShowCollection] = useState(false)
     
     const id = user.id
   
@@ -42,25 +46,31 @@ const UserProfilePage = () => {
     
 
     return (
-        <>
-            <h1>{user.username}</h1>
-            <h3>Follows</h3>
-            {follows && follows.map((follow => (
+      <>
+        <div className="user-profile-container">
+          <UserDisplay user={user} />
+          <div className="collection-container">
+            <div className="tab-container">
+                <ul className="grid-tabs">
+                    <li onClick={() => setShowFollowers(true)} className="collection-tab">Follows</li>
+                    <li onClick={() => setShowFollowers(false)} className="follows-tab">Collection</li>
+                </ul>
+            </div>
+            {showFollowers ? (
             <>
-            <Link to="/artists/:id">
-                <img className="artist-images" src={follow.avatarUrl} />
-            </Link>
-            <p><em>{follow.name}</em></p>
-            </>)
-            ))}
-            <h1>Collections</h1>
-            {collection && (
-                <div className='collection-container'>
-                {collection.map((album) => (<AlbumCard album={album} />))}
-                </div>
+                <h3>Follows</h3>
+                <FollowsDisplay follows={follows} />
+            </>
+            ) : (
+            <>
+                <h1>Collections</h1>
+                <CollectionDisplay collection={collection} />
+            </>
             )}
-        </> 
-    )
+          </div>
+        </div>
+      </>
+    );
 }
 
 export default UserProfilePage
