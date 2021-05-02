@@ -1,5 +1,18 @@
 .audio-controls {
     display: flex;
     flex-direction: row;
+    gap: 5px;
+    align-content: center;
+}
+
+.fa-pause, .fa-play {
+    font-size: 1em;
+}
+
+.play, .pause {
   
+}
+
+.audio-controls > button {
+   
 }

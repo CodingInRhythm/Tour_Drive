@@ -31,10 +31,7 @@ const ProfileButton = ({user}) => {
     return (
       <>
         <div className="navbar-right">
-          <div className="tour-drive-logo">
-            <span className="tour-drive-text">Tour Drive</span>
-            <i className="fas fa-shuttle-van fa-5X"></i>
-          </div>
+          <p>Welcome to Tour Drive, {user.username}!</p>
           <button onClick={openMenu}>
             <i className="fas fa-record-vinyl"></i>
           </button>

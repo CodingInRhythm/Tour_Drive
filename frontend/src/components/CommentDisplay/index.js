@@ -19,8 +19,13 @@ const CommentDisplay = ({albumId}) => {
         <>
         {commentData.length && commentData.map((comment, idx) => (
             <div className="comment-container" key={idx}> 
-                <img src={comment.User.imageUrl}></img>
-                <p><span>{`${comment.User.username}: `}</span>{comment.comment}</p>
+                {comment.comment && 
+                <div className='comment-line'>
+                <img className='comment-avi' src={comment.User.imageUrl}></img>
+                
+                <p><span className={'comment-author'}>{`${comment.User.username}: `}</span>{comment.comment}</p>
+                </div>
+                }
             </div>
         ))} 
         </>

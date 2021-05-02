@@ -3,6 +3,12 @@
     background-color: lightblue;
     grid-template-areas: 
     'left left middle middle right';
+    font-family: 'Montserrat', sans-serif
+}
+
+button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
 }
 
 .album-left{
@@ -12,11 +18,16 @@
 
 .album-center{
     grid-area: middle;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .album-art {
-    height: 35vh;
-    width: 25vw;
+    height: 350px;
+    width: 350px;
     grid-area: middle;
 }
 .album-right {
@@ -30,7 +41,7 @@
 }
 
 .album-name {
-    font-family: 'Helvetica-Neue';
+    /* font-family: 'Helvetica-Neue'; */
     font-size: 1.5em;
 }
 
@@ -39,6 +50,6 @@
 }
 
 .artist-pic {
-    height: 100px;
-    width: 100px;
+    height: 120px;
+    width: 120px;
 }

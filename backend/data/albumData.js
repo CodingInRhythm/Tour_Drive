@@ -113,13 +113,7 @@ const albumData = [
     artistId: 7
   },
   // 10
-{
-    name: "Seven Angels, part II",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum ipsum in sem fermentum elementum. Ut dapibus fringilla risus sed placerat. Cras sit amet quam sed libero efficitur scelerisque quis ut sem. Nulla facilisis accumsan tortor sed elementum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed diam quam, ultricies nec odio nec, finibus vehicula urna. Duis.",
-    albumArt: "https://res.cloudinary.com/alex-clough/image/upload/v1619885364/Album%20Covers/_A7R9209_resize_aotkmy.jpg",
-    artistId: 7
 
-  }
 ];
 
 

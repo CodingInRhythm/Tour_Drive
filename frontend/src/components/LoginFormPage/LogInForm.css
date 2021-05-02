@@ -1,0 +1,15 @@
+.form-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+}
+
+.form-label {
+    font-family: 'Montserrat';
+    font-size: 1.5em;
+}

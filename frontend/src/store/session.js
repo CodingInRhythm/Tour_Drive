@@ -1,5 +1,6 @@
 import { csrfFetch } from './csrf'
 
+
 const SET_USER = 'users/SET_USER'
 const REMOVE_USER = 'users/REMOVE_USER'
 const EDIT_USER = 'users/EDIT_USER'
@@ -41,6 +42,7 @@ export const signup = (userObj) => async (dispatch) => {
     const { email, password, username, image } = userObj
     const formData = new FormData();
 
+
     formData.append("username", username);
     formData.append("email", email);
     formData.append("password", password);
@@ -55,6 +57,7 @@ export const signup = (userObj) => async (dispatch) => {
     });
     const data = await res.json()
     dispatch(setUser(data.user))
+    // history.push('/')
     return res
 }
 

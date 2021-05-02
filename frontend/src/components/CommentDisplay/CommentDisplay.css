@@ -2,3 +2,17 @@
     display: flex;
     flex-direction: row;
 }
+
+.comment-avi {
+    border: 1px solid grey;
+    border-radius: 50px;
+}
+
+.comment-line {
+    display: flex;
+    gap: 5px;
+}
+
+.comment-author {
+    font-weight: 1000;
+}

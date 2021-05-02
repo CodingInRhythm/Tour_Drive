@@ -27,6 +27,7 @@ module.exports = {
         userObj.email = user.email
         userObj.hashedPassword = bcrypt.hashSync(user.login.password, 10)
         userObj.imageUrl = user.picture.thumbnail
+        userObj.mediumImageUrl = user.picture.medium
         users.push(userObj)
       })
 ////                                           [{name:'1234, DOB: }]

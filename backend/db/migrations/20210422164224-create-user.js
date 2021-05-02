@@ -25,6 +25,9 @@ module.exports = {
       imageUrl: {
         type: Sequelize.TEXT,
       },
+      mediumImageUrl: {
+        type: Sequelize.TEXT,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from 'react-redux'
 import { Redirect } from 'react-router-dom'
+import './LogInForm.css'
 
 const LoginFormPage = () => {
     const dispatch = useDispatch()
@@ -31,25 +32,27 @@ const LoginFormPage = () => {
             <li key={idx}>{error}</li>
           ))}
         </ul>
-        <label>
-          Username CHANGE
-          <input
-            onChange={(e) => setCredential(e.target.value)}
-            name="credential"
-            type="text"
-            value={credential}
-          ></input>
-        </label>
-        <label>
-          Password
-          <input
-            onChange={(e) => setPassword(e.target.value)}
-            name="password"
-            type="password"
-            value={password}
-          ></input>
-        </label>
+        <div className="form-container">
+          <label className="form-label">
+            Username
+            <input
+              onChange={(e) => setCredential(e.target.value)}
+              name="credential"
+              type="text"
+              value={credential}
+            ></input>
+          </label>
+          <label className="form-label">
+            Password
+            <input
+              onChange={(e) => setPassword(e.target.value)}
+              name="password"
+              type="password"
+              value={password}
+            ></input>
+          </label>
         <button type="submit">SUBMIT</button>
+        </div>
       </form>
     );
 }
