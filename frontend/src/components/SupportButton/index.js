@@ -26,7 +26,7 @@ const SupportButton = ({user, album}) => {
         
 
            let supports = allSupports.Albums.filter((a) => a.id === album.id);
-           console.log(supports);
+     
 
            if (supports.length) {
              setSupported(true);

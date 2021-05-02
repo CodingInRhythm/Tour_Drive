@@ -1,10 +1,11 @@
 const express = require("express");
 const db = require("../../db/models/");
+const sequelize = require('sequelize')
 
 const router = express.Router();
 
 router.get("/:id", async (req, res) => {
-  console.log("here?");
+ 
   const id = req.params.id;
   const comments = await db.User_Collection.findAll({
    where: {
@@ -15,9 +16,25 @@ router.get("/:id", async (req, res) => {
   res.json(comments);
 });
 
+router.get("/:userid/:albumid", async(req, res) => {
+  const userId = req.params.userid
+  const albumId = req.params.albumid
+
+  const comment = await db.User_Collection.findOne({
+    where: {
+      userId,
+      albumId
+
+    }
+  })
+
+
+  res.json(comment)
+})
+
 router.post("/", async (req, res) => {
   const { comment, userId, albumId } = req.body;
-  console.log(albumId, userId)
+
 
   const collection = await db.User_Collection.findOne(
       {where: {
@@ -25,11 +42,11 @@ router.post("/", async (req, res) => {
             albumId
       }
     });
-          console.log('before',collection.comment)
+         
           collection.comment = comment 
-          console.log('after', collection.comment);
+          
           await collection.save()
-          console.log(collection.comment)
+          
           res.json(collection);
   })
   router.put("/", async (req, res) => {
@@ -57,7 +74,7 @@ router.post("/", async (req, res) => {
     });
           collection.comment = null 
           await collection.save()
-          console.log(collection)
+          
           res.json(collection);
   })
 

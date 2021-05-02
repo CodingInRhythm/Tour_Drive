@@ -1,12 +1,12 @@
 import AlbumCard from "../AlbumCard";
-const CollectionDisplay = ({ collection }) => {
+const CollectionDisplay = ({comments, collection }) => {
   return (
     <>
       <div className="collection-display">
         {collection && (
           <div className="collection-display">
             {collection.map((album) => (
-              <AlbumCard album={album} />
+              <AlbumCard comments={comments} album={album} />
             ))}
           </div>
         )}

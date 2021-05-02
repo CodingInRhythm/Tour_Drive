@@ -59,7 +59,7 @@ const Follow = ({user, album}) => {
           let followArray = allFollows.Artists.filter(
           (artist) => artist.id === album.artistId
           );
-            console.log(followArray)
+           
           if (followArray.length) {
               setFollowed(true);
           }

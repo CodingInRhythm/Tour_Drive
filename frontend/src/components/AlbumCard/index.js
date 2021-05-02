@@ -1,20 +1,20 @@
 import { Link } from 'react-router-dom'
 import './AlbumCard.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { csrfFetch } from '../../store/csrf'
 
 
-const AlbumCard = ({album}) => {
+const AlbumCard = ({comments, album}) => {
    
 
     const [comment, setComment] = useState('')
     const userId = useSelector((state) => state.session.user.id);
     const albumId = album.id
     const [errors, setErrors] = useState([])
-    const [commentFormDisplayName, setCommentFormDisplayName] = useState("")
-    const [commentDiv, setCommentDiv] = useState("hidden")    
+    const [dBComment, setdBComment] = useState(null)
     
+
     ///Functions -- can refactor this into one function?
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -24,31 +24,40 @@ const AlbumCard = ({album}) => {
         //     setErrors(errors)
         //     return 
         // }
+
+        if (comment === "") {
+          const errors = []
+          errors.push("please enter a comment");
+          setErrors(errors)
+          return;
+        }
         const res = await csrfFetch('/api/comments', {
             method: 'POST',
 
             body: JSON.stringify({comment, userId, albumId})
         })
         const data = await res.json()
-
+        setErrors([]); 
+        setdBComment(comment)
         //logic to replace "comment-form" with "comment"
 
-       setCommentFormDisplayName("none")
-       setCommentDiv("")
-
     }
+   
 
     const editComment = async (e) => {
       e.preventDefault()
-
+      if (comment === '') {
+        errors.push("please enter a comment")
+        return
+      }
       const res = await csrfFetch('/api/comments', {
         method: 'PUT',
-        body: JSON.stringify({comment, userId})
+        body: JSON.stringify({comment, albumId, userId})
       })
       const data = await res.json()
+      setErrors([])
+      setdBComment(comment)
 
-      setCommentDiv("");
-      setCommentFormDisplayName("none");
     }
 
     const deleteComment = async (e) => {
@@ -57,10 +66,21 @@ const AlbumCard = ({album}) => {
         method: 'DELETE',
         body: JSON.stringify({userId, albumId})
       })
-      setCommentFormDisplayName("");
-      setCommentDiv("none");
+      setComment("")
+      setdBComment("")
     }
 
+    useEffect(() => {
+      const getComment = async (e) => {
+        const res = await csrfFetch(`/api/comments/${userId}/${albumId}`);
+        const data = await res.json();
+      
+        setdBComment(data.comment)
+      };
+      getComment();
+    }, [setdBComment]);
+    ///need to make comment submit form invisible when comments exists
+    //need to make comment edit for invisible when comment does not exist
     return (
       <>
         <div className="album-card-container">
@@ -69,29 +89,42 @@ const AlbumCard = ({album}) => {
           </Link>
           <h3>{album.name}</h3>
           <h5>by {album.Artist.name}</h5>
-          <div className="comment-form" style={{display:commentFormDisplayName}}>
-            <form onSubmit={handleSubmit}>
-              <textarea
-                type="text"
-                rows="3"
-                value={comment}
-                placeholder="comment will  appear on artists page"
-                onChange={(e) => setComment(e.target.value)}
-              ></textarea>
-              <button type="submit">Comment</button>
-              {errors && errors.map((error) => (<p>{error}</p>))}
-            </form>
-          </div>
-          <div className="comment" style={{display:commentDiv}}>
-            <p>{comment}</p>
-            <div className="comment-edit-delete-container"></div>
-            <form onSubmit={editComment}>
-              <button type='submit' onClick={(e) => {setCommentFormDisplayName("")}}>Edit</button>
-            </form >
-            <form onSubmit={deleteComment}>
-              <button type="submit">Delete</button>
-            </form>
-         </div>
+          {errors.length && errors.map((error => (
+            <li>{error}</li>
+          )))}
+          {!dBComment ? (
+            <div className="comment-form">
+              <form onSubmit={handleSubmit}>
+                <textarea
+                  className="text-area"
+                  type="text"
+                  rows="3"
+                  value={comment}
+                  placeholder="comment will  appear on artists page..."
+                  onChange={(e) => setComment(e.target.value)}
+                ></textarea>
+                <button type="submit">Comment</button>
+                {errors && errors.map((error) => <p>{error}</p>)}
+              </form>
+            </div>
+          ) : (
+            <div className="comment-edit-delete-container">
+              <form onSubmit={editComment}>
+                <textarea
+                  className="text-area"
+                  placeholder={dBComment}
+                  value={comment}
+                  type="text"
+                  rows="3"
+                  onChange={(e) => setComment(e.target.value)}
+                ></textarea>
+                <button type="submit">Edit</button>
+              </form>
+              <form onSubmit={deleteComment}>
+                <button type="submit">Delete</button>
+              </form>
+            </div>
+          )}
         </div>
       </>
     );

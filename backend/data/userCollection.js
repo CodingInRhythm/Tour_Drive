@@ -44,6 +44,6 @@ for (let i = 10; i < 30; i = i + 2) {
 }
 
 exportGroup = [...firstGroup, ...secondGroup, ...thirdGroup];
-console.log(exportGroup);
+
 
 module.exports = exportGroup;

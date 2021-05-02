@@ -20,7 +20,6 @@ const AlbumPage = () => {
     const album = useSelector((state) => state.album.album)
     const user = useSelector((state) => state.session.user)
     
-    console.log(album)
 
     const[isLoaded, setIsLoaded] = useState(false)
     const[follows, setFollows] = useState(false)
@@ -33,10 +32,6 @@ const AlbumPage = () => {
 
         
     }, [])
-
- 
-    
-   console.log(user)
 
   
   

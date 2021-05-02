@@ -16,7 +16,7 @@ const MusicPlayer = ({tracks}) => {
     
    //trackIndex use Effect
     useEffect(() => {
-        console.log('useEffect # 1')
+   
         if (isPlaying) {
         audioRef.current.pause()
         audioRef.current = new Audio()
@@ -29,7 +29,7 @@ const MusicPlayer = ({tracks}) => {
 
 
     useEffect(() => {
-   console.log("useEffect # 2");
+ 
       if (isPlaying === false) {
         audioRef.current.pause();
         // startTimer()

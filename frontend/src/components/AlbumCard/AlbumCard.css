@@ -6,6 +6,7 @@
     
 }
 
-.comment-form {
+.comment-form, .comment-edit-delete-container {
     overflow: hidden;
 }
+

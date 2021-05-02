@@ -43,4 +43,10 @@
 .follows-display, .collection-display {
     display: flex;
     flex-direction: row;
+    gap: 20px;
+}
+
+.text-area{
+    font-family: 'Montserrat';
+    font-style: italic;
 }

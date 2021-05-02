@@ -10,7 +10,7 @@ const CommentDisplay = ({albumId}) => {
         const fetchComments = async () => {
         const res = await csrfFetch(`/api/comments/${albumId}`)
         const data = await res.json()
-        console.log(data)
+        
         setCommentData(data)
         }
         fetchComments()

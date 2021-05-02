@@ -12,6 +12,7 @@ const UserProfilePage = () => {
     const [collection, setCollection] = useState([])
     const [showFollowers, setShowFollowers] = useState(true)
     const [showCollection, setShowCollection] = useState(false)
+    const [comments, setComments] = useState([])
     
     const id = user.id
   
@@ -23,6 +24,7 @@ const UserProfilePage = () => {
         let data = await res.json()
        
         setFollows(data.Artists)
+        
        
         
     }
@@ -35,8 +37,9 @@ const UserProfilePage = () => {
         async function FetchCollection() {
             const res = await fetch (`/api/collection/${id}`)
             let data = await res.json()
-            console.log(data)
+          
             setCollection(data.Albums)
+            setComments(data.User_Collections)
             
             
             
@@ -64,7 +67,7 @@ const UserProfilePage = () => {
             ) : (
             <>
                 <h1>Collections</h1>
-                <CollectionDisplay collection={collection} />
+                <CollectionDisplay comments={comments} collection={collection} />
             </>
             )}
           </div>
