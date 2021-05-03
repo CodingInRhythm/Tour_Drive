@@ -13,17 +13,12 @@ const AlbumCard = ({comments, album}) => {
     const albumId = album.id
     const [errors, setErrors] = useState([])
     const [dBComment, setdBComment] = useState(null)
-    
+    console.log(errors)
 
     ///Functions -- can refactor this into one function?
     const handleSubmit = async (e) => {
         e.preventDefault()
-        // if(comment === "") {
-        //     const errors = []
-        //     errors.push("Please fill out field")
-        //     setErrors(errors)
-        //     return 
-        // }
+      
 
         if (comment === "") {
           const errors = []
@@ -79,19 +74,18 @@ const AlbumCard = ({comments, album}) => {
       };
       getComment();
     }, [setdBComment]);
-    ///need to make comment submit form invisible when comments exists
-    //need to make comment edit for invisible when comment does not exist
+
+
+   
     return (
       <>
         <div className="album-card-container">
-          <Link to={`/albums/${album.id}`}>
+          <Link className="collection-link" to={`/albums/${album.id}`}>
             <img className="collection-images" src={album.albumArt}></img>
           </Link>
           <h3>{album.name}</h3>
           <h5>by {album.Artist.name}</h5>
-          {errors.length && errors.map((error => (
-            <li>{error}</li>
-          )))}
+          {errors.length > 0 && errors.map((error) => <p>{error}</p>)}
           {!dBComment ? (
             <div className="comment-form">
               <form onSubmit={handleSubmit}>
@@ -104,7 +98,6 @@ const AlbumCard = ({comments, album}) => {
                   onChange={(e) => setComment(e.target.value)}
                 ></textarea>
                 <button type="submit">Comment</button>
-                {errors && errors.map((error) => <p>{error}</p>)}
               </form>
             </div>
           ) : (

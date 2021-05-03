@@ -31,7 +31,7 @@ const UserProfilePage = () => {
     FetchFollows()
     },[])
 
-   
+  
 
     useEffect(() => {
         async function FetchCollection() {
@@ -54,21 +54,34 @@ const UserProfilePage = () => {
           <UserDisplay user={user} />
           <div className="collection-container">
             <div className="tab-container">
-                <ul className="grid-tabs">
-                    <li onClick={() => setShowFollowers(true)} className="collection-tab">Follows</li>
-                    <li onClick={() => setShowFollowers(false)} className="follows-tab">Collection</li>
-                </ul>
+              <ul className="grid-tabs">
+                <li
+                  onClick={() => setShowFollowers(true)}
+                  className="collection-tab"
+                >
+                  Follows<span className="span1">{follows.length}</span>
+                </li>
+                <li
+                  onClick={() => setShowFollowers(false)}
+                  className="follows-tab"
+                >
+                  Collection<span className="span1">{collection.length}</span>
+                </li>
+              </ul>
             </div>
             {showFollowers ? (
-            <>
+              <>
                 <h3>Follows</h3>
                 <FollowsDisplay follows={follows} />
-            </>
+              </>
             ) : (
-            <>
+              <>
                 <h1>Collections</h1>
-                <CollectionDisplay comments={comments} collection={collection} />
-            </>
+                <CollectionDisplay
+                  comments={comments}
+                  collection={collection}
+                />
+              </>
             )}
           </div>
         </div>

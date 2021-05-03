@@ -2,9 +2,10 @@
     font-family: Montserrat
 }
 .collection-images {
-    height: 50px;
-    width: 50px;
-    padding: 20px;
+    box-sizing: border-box;
+    height: 150px;
+    width: 150px;
+    
 }
 
 .artist-images {
@@ -31,9 +32,17 @@
     gap: 15px;
 }
 
+.span1 {
+    padding-left: 5px;
+}
+
+.tab-container {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.486)
+}
+
 .collection-tab, .follows-tab {
     list-style-type: none;
-    background-color: whitesmoke
+    color: whitesmoke
 }
 
 .collection-tab:hover, .follows-tab:hover {

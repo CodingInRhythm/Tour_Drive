@@ -1,19 +1,16 @@
 import AudioControls from '../AudioControls'
 import { useState, useRef, useEffect } from 'react'
 const MusicPlayer = ({tracks}) => {
-  //codinginrhythmbucket.s3.amazonaws.com/03+-+Red+Shades.wav
-  const [trackIndex, setTrackIndex] = useState(0);
-  // const [ trackProgress, setTrackProgress] = useState(0)
-  const [isPlaying, setIsPlaying] = useState(false);
 
+  // use State to keep track of track and isPlaying check.
+  const [trackIndex, setTrackIndex] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
   const { name, songLink } = tracks[trackIndex];
 
   const audioRef = useRef(new Audio(songLink));
-  // const audioRef = useRef(new Audio(songLink));
-  // const intervalRef = useRef();
-  // const isReady = useRef(false);
 
-  //trackIndex use Effect
+
+  //trackIndex use Effect fires on change of track
   useEffect(() => {
     if (isPlaying) {
       audioRef.current.pause();
@@ -25,6 +22,7 @@ const MusicPlayer = ({tracks}) => {
     // startTimer()
   }, [trackIndex]);
 
+  //isplaying useEffect fires on play/pause functionality.  
   useEffect(() => {
     if (isPlaying === false) {
       audioRef.current.pause();
@@ -33,6 +31,8 @@ const MusicPlayer = ({tracks}) => {
       audioRef.current.play();
     }
   }, [isPlaying]);
+
+  //clean up useEffect to stop music player when unmounting component
 
     useEffect(() => {
       console.log('useEffect 2')
@@ -43,6 +43,8 @@ const MusicPlayer = ({tracks}) => {
       };
     }, []);
 
+    //pass props to Audio component which listens for click on play pause
+    //buttons to modify trackIndex and isPlaying states.  
   return (
     <>
       {tracks.map((song, idx) => (
@@ -54,10 +56,6 @@ const MusicPlayer = ({tracks}) => {
             setTrackIndex={setTrackIndex}
             setIsPlaying={setIsPlaying}
             isPlaying={isPlaying}
-            // trackProgress={trackProgress}
-            // duration={duration}
-            // onScrub={onScrub}
-            // onScrubEnd={onScrubEnd}
           />
         </div>
       ))}

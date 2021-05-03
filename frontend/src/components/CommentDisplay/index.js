@@ -17,7 +17,7 @@ const CommentDisplay = ({albumId}) => {
     }, [])
     return (
         <>
-        {commentData.length && commentData.map((comment, idx) => (
+        {commentData.length > 0 && commentData.map((comment, idx) => (
             <div className="comment-container" key={idx}> 
                 {comment.comment && 
                 <div className='comment-line'>
