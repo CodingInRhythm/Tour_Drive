@@ -9,6 +9,7 @@ import MusicPlayer from './components/MusicPlayer';
 import AlbumPage from './components/AlbumPage';
 import UserProfilePage from './components/UserProfilePage'
 import HomePage from './components/HomePage'
+import Footer from './components/Footer'
 function App() {
 const dispatch = useDispatch()
 
@@ -40,6 +41,7 @@ const [isLoaded, setIsLoaded] = useState(false)
       </Route>
     </Switch>
     )}
+    <Footer />
     </>
   );
 }

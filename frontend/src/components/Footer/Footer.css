@@ -1,0 +1,29 @@
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: white;
+    font-family: Montserrat;
+    border-top: 1px solid white
+}
+
+.fa-shuttle-van {
+    color: white;
+}
+
+.tour-drive-footer-text {
+    font-size: .75em;
+    padding-left: .5em;
+    font-family: 'Caveat Brush', cursive;
+}
+
+.alex-links {
+    padding-right: 40px;
+    margin-bottom: 0px;
+    list-style-type: none;
+}
+
+.footer-link  {
+    text-decoration: none;
+}

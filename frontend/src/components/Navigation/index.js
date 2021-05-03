@@ -37,19 +37,18 @@ const Navigation = ({isLoaded}) => {
         );
     }
    return (
-       <div className="navbar">
-         <div className="tour-drive-logo">
-           <div className="logo-text">
-             <span className="tour-drive-text">Tour Drive</span>
-             <span>Get your favorite artist on the road!</span>
-           </div>
-           <i className="fas fa-shuttle-van fa-5X"></i>
+     <div className="navbar">
+       <div className="tour-drive-logo">
+         <div className="logo-text">
+           <span className="tour-drive-text">Tour Drive</span>
+           <span>Get your favorite artist on the road!</span>
          </div>
-         <NavLink className="home-button" exact to="/">
-           Home
-         </NavLink>
-         {isLoaded && sessionLinks}
+       <NavLink className="home-button" exact to="/">
+         <i className="fas fa-shuttle-van fa-5X"></i>
+       </NavLink>
        </div>
+       {isLoaded && sessionLinks}
+     </div>
    );
 }
 
