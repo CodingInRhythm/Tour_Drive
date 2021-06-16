@@ -3,21 +3,8 @@ import { useRef } from 'react'
 
 const AudioControls = ({song, idx, setTrackIndex, trackIndex, setIsPlaying, isPlaying}) => {
    const handlePlayClick = () => {
-     //what are my scenarios: 1) I am playing a track and have pressed play on a different track (isPlaying === true)
-     //How do I stop the current track and then tell my state that there is a new track and to play it?
-     //2) no track is playing and I have pressed play on a track.  
-
-     // case 1:
-
       setTrackIndex(idx)
       setIsPlaying(true)
-  
-    
-      //  setIsPlaying(true)
-      //  if (trackIndex !== idx) {
-      //    setIsPlaying(false)
-      //   setTrackIndex(idx) //chanes trackIndex which changes songLink?
-      //  }
       }
 
 
