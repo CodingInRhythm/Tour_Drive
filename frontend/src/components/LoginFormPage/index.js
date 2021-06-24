@@ -32,7 +32,7 @@ const LoginFormPage = () => {
             <li key={idx}>{error}</li>
           ))}
         </ul>
-        <div className="form-container">
+        <div className="login-form-container">
           <label className="form-label">
             Username
             <input

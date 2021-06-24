@@ -47,14 +47,13 @@ const SignupFormPage = () => {
      };
 
     return (
-      <div className="sign-up-body">
-        <form onSubmit={onSubmit}>
+      
+        <form className="signup-form-container" onSubmit={onSubmit}>
           <ul>
             {errors.map((error, idx) => (
               <li key={idx}>{error}</li>
             ))}
           </ul>
-          <div className="form-container">
             <h1>Sign up for Tour Drive!</h1>
             <div className="form-field-wrapper">
               <label className="form-label"> Username</label>
@@ -96,9 +95,7 @@ const SignupFormPage = () => {
             <button className="sign-up-button" type="submit">
               Sign Up
             </button>
-          </div>
         </form>
-      </div>
     );
 }
 

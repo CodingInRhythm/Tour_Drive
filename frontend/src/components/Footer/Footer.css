@@ -5,7 +5,11 @@
     align-items: flex-end;
     color: white;
     font-family: Montserrat;
-    border-top: 1px solid white
+    border-top: 1px solid white;
+    position: absolute;
+    bottom: 0;
+    height: 80px;
+    width: 100vw;
 }
 
 .fa-shuttle-van {
