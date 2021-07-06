@@ -181,7 +181,7 @@ const songData = [
     songLength: "02:57",
   },
 
-  //   ////albumId 3 *************
+  
 
   //   {
   //     name: "Re: Person I Knew",
@@ -195,7 +195,7 @@ const songData = [
     songLink:
       "https://res.cloudinary.com/alex-clough/video/upload/v1619726541/Mike%20Forfia%20-%20Live%20With%20Friends%202017/Mike_Forfia_-_Live_With_Friends_2017_-_05_Re-_Person_I_Knew_p44vnx.mp3",
     artistId: 2,
-    albumId: 3,
+    albumId: 2,
     songLength: "07:08",
   },
   //   {
@@ -211,7 +211,7 @@ const songData = [
     songLink:
       "https://res.cloudinary.com/alex-clough/video/upload/v1619726542/Mike%20Forfia%20-%20Live%20With%20Friends%202017/Mike_Forfia_-_Live_With_Friends_2017_-_06_3_Mvts_On_A_Theme_For_Electric_Bass_and_Loop_Pedal_cn3gym.mp3",
     artistId: 2,
-    albumId: 3,
+    albumId: 2,
     songLength: "06:03",
   },
   //     name: "The Chicken",
@@ -225,8 +225,88 @@ const songData = [
     songLink:
       "https://res.cloudinary.com/alex-clough/video/upload/v1619726549/Mike%20Forfia%20-%20Live%20With%20Friends%202017/Mike_Forfia_-_Live_With_Friends_2017_-_07_The_Chicken_jcvxir.mp3",
     artistId: 2,
-    albumId: 3,
+    albumId: 2,
     songLength: "11:35",
+  },
+
+//album 3
+
+  {
+    name: "The Bet",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879796/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/01_-_The_Bet_vtxxhk.mp3",
+    artistId: 7,
+    albumId: 3,
+  },
+  {
+    name: "Nightwatch",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879798/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/02_-_Nightwatch_oxrkdx.mp3",
+    artistId: 7,
+    albumId: 3,
+  },
+  {
+    name: "Ladybird",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879802/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/03_-_Ladybird_ixmiok.mp3",
+    artistId: 7,
+    albumId: 3,
+  },
+  {
+    name: "Whelmed",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879800/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/04_-_Whelmed_snu18o.mp3",
+    artistId: 7,
+    albumId: 3,
+  },
+  {
+    name: "Intro to Pearls",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879796/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/05_-_Intro_To_Pearls_feat._Steven_Feifke_hzqbyl.mp3",
+    artistId: 7,
+    albumId: 3,
+  },
+  {
+    name: "Pearls of the Tartar",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879792/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/06_-_Pearls_Of_The_Tartar_sjmbop.mp3",
+    artistId: 7,
+    albumId: 3,
+  },
+  {
+    name: "A Shade of Jade",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879801/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/07_-_A_Shade_Of_Jade_qux69e.mp3",
+    artistId: 7,
+    albumId: 3,
+  },
+  {
+    name: "Seven Angels",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879795/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/08_-_Seven_Angels_v9cl9j.mp3",
+    artistId: 7,
+    albumId: 3,
+  },
+  {
+    name: "Signal Changes",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879793/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/09_-_Signal_Changes_av8ibl.mp3",
+    artistId: 7,
+    albumId: 3,
+  },
+  {
+    name: "Cloud Down",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879798/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/10_-_cloud_down_bheck6.mp3",
+    artistId: 7,
+    albumId: 3,
+  },
+  {
+    name: "Everything I Love",
+    songLink:
+      "https://res.cloudinary.com/alex-clough/video/upload/v1619879797/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/11_-_Everything_I_Love_c7ucyj.mp3",
+    artistId: 7,
+    albumId: 3,
   },
 
   // album 4
@@ -444,83 +524,6 @@ const songData = [
       "https://res.cloudinary.com/alex-clough/video/upload/v1619879639/Adam%20Lomeo/Adam_Lomeo/Liza_MSTR_a1u2xs.mp3",
     artistId: 6,
     albumId: 8,
-  },
-
-  // album 9
-  {
-    name: "The Bet",
-    songLink:
-      "https://res.cloudinary.com/alex-clough/video/upload/v1619879796/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/01_-_The_Bet_vtxxhk.mp3",
-    artistId: 7,
-    albumId: 9,
-  },
-  {
-    name: "Nightwatch",
-    songLink:
-      "https://res.cloudinary.com/alex-clough/video/upload/v1619879798/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/02_-_Nightwatch_oxrkdx.mp3",
-    artistId: 7,
-    albumId: 9,
-  },
-  {
-    name: "Ladybird",
-    songLink: "https://res.cloudinary.com/alex-clough/video/upload/v1619879802/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/03_-_Ladybird_ixmiok.mp3",
-    artistId: 7,
-    albumId: 9,
-  },
-  {
-    name: "Whelmed",
-    songLink:
-      "https://res.cloudinary.com/alex-clough/video/upload/v1619879800/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/04_-_Whelmed_snu18o.mp3",
-    artistId: 7,
-    albumId: 9,
-  },
-  {
-    name: "Intro to Pearls",
-    songLink:
-      "https://res.cloudinary.com/alex-clough/video/upload/v1619879796/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/05_-_Intro_To_Pearls_feat._Steven_Feifke_hzqbyl.mp3",
-    artistId: 7,
-    albumId: 9,
-  },
-  {
-    name: "Pearls of the Tartar",
-    songLink:
-      "https://res.cloudinary.com/alex-clough/video/upload/v1619879792/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/06_-_Pearls_Of_The_Tartar_sjmbop.mp3",
-    artistId: 7,
-    albumId: 9,
-  },
-  {
-    name: "A Shade of Jade",
-    songLink:
-      "https://res.cloudinary.com/alex-clough/video/upload/v1619879801/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/07_-_A_Shade_Of_Jade_qux69e.mp3",
-    artistId: 7,
-    albumId: 9,
-  },
-  {
-    name: "Seven Angels",
-    songLink:
-      "https://res.cloudinary.com/alex-clough/video/upload/v1619879795/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/08_-_Seven_Angels_v9cl9j.mp3",
-    artistId: 7,
-    albumId: 9,
-  },
-  {
-    name: "Signal Changes",
-    songLink:
-      "https://res.cloudinary.com/alex-clough/video/upload/v1619879793/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/09_-_Signal_Changes_av8ibl.mp3",
-    artistId: 7,
-    albumId: 9,
-  },
-  {
-    name: "Cloud Down",
-    songLink:
-      "https://res.cloudinary.com/alex-clough/video/upload/v1619879798/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/10_-_cloud_down_bheck6.mp3",
-    artistId: 7,
-    albumId: 9,
-  },
-    {
-    name: "Everything I Love",
-    songLink: "https://res.cloudinary.com/alex-clough/video/upload/v1619879797/John%20Lake/John%20Lake/Seven%20Angels%20MP3s/11_-_Everything_I_Love_c7ucyj.mp3",
-    artistId: 7,
-    albumId: 9,
   },
 ];
 /*
