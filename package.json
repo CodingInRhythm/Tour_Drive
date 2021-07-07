@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/CodingInRhythm/Tour_Drive/issues"
   },
-  "homepage": "https://github.com/CodingInRhythm/Tour_Drive#readme"
+  "homepage": "https://github.com/CodingInRhythm/Tour_Drive#readme",
+  "devDependencies": {
+    "dotenv": "^10.0.0"
+  }
 }
