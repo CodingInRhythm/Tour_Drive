@@ -1,5 +1,5 @@
 {
-  "name": "Tour_Drive",
+  "name": "tour_drive",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,8 @@
     "dev:frontend": "npm install --prefix frontend start",
     "sequelize": "npm run --prefix backend sequelize",
     "sequelize-cli": "npm run --prefix backend sequelize-cli",
-    "start": "npm start --prefix backend"
+    "start": "npm start --prefix backend",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,16 @@
   },
   "homepage": "https://github.com/CodingInRhythm/Tour_Drive#readme",
   "devDependencies": {
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "eslint": "^8.24.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "^4.6.0"
+  },
+  "dependencies": {
+    "react-router-dom": "^6.3.0",
+    "typescript": "^4.8.4"
   }
 }
